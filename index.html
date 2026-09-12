@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -433,12 +433,109 @@ main{
   font-size:.9375rem;
   padding:.75rem 1.5rem;
   border-radius:.75rem;
+  box-shadow:0 10px 20px rgba(116,198,157,.25);
+  transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
 .btn-cta:hover{
   background:var(--color-accent-hover);
+  transform:translateY(-1px);
+  box-shadow:0 14px 26px rgba(116,198,157,.28);
 }
 
+.btn-cta.secondary{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;
+  box-shadow:none;
+}
+
+.btn-cta.secondary:hover{
+  background:rgba(255,255,255,.18);
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+}
+
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:.75rem;
+  margin-top:2rem;
+  max-width:440px;
+}
+
+.stat-pill{
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:.9rem;
+  padding:.9rem .8rem;
+  color:rgba(255,255,255,.9);
+}
+
+.stat-pill strong{
+  display:block;
+  font-family:var(--font-heading);
+  font-size:1.3rem;
+  margin-bottom:.15rem;
+  color:#fff;
+}
+
+.stat-pill span{
+  font-size:.75rem;
+  opacity:.8;
+}
+
+.features-strip{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
+  margin:0 auto 3rem;
+  max-width:80rem;
+}
+
+@media(min-width:720px){
+  .features-strip{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+}
+
+.feature-item{
+  display:flex;
+  align-items:flex-start;
+  gap:.75rem;
+  background:#fff;
+  border:1px solid var(--color-border);
+  border-radius:1rem;
+  padding:1rem 1.1rem;
+  box-shadow:0 6px 16px rgba(26,41,26,.03);
+}
+
+.feature-icon{
+  width:2.5rem;
+  height:2.5rem;
+  border-radius:.8rem;
+  display:grid;
+  place-items:center;
+  font-size:1.2rem;
+  background:var(--color-secondary);
+  color:var(--color-primary);
+}
+
+.feature-copy h3{
+  margin:0 0 .25rem;
+  font-size:1rem;
+}
+
+.feature-copy p{
+  margin:0;
+  color:var(--color-muted-foreground);
+  font-size:.85rem;
+  line-height:1.5;
+}
 
 /* ================= CATÁLOGO + SIDEBAR ================= */
 
@@ -578,6 +675,366 @@ main{
   grid-column:1/-1;
 }
 
+.section-heading{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:1rem;
+  margin:0 0 1.25rem;
+}
+
+.section-heading h2{
+  margin:0;
+  font-family:var(--font-heading);
+  font-size:1.75rem;
+  line-height:1.1;
+}
+
+.section-heading span{
+  color:var(--color-muted-foreground);
+  font-size:.8125rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+
+.producer-panel{
+  background:var(--color-card);
+  border:1px solid var(--color-border);
+  border-radius:1.25rem;
+  padding:1rem;
+  margin-bottom:2rem;
+  box-shadow:0 8px 18px rgba(0,0,0,.03);
+}
+
+.producer-card{
+  display:grid;
+  gap:1.25rem;
+}
+
+@media(min-width:860px){
+  .producer-card{
+    grid-template-columns:1.2fr 1fr;
+    align-items:stretch;
+  }
+}
+
+.producer-hero{
+  position:relative;
+  min-height:320px;
+  border-radius:1rem;
+  overflow:hidden;
+  background:var(--color-muted);
+}
+
+.producer-hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.producer-hero-badge{
+  position:absolute;
+  left:1rem;
+  top:1rem;
+  background:rgba(255,255,255,.9);
+  color:var(--color-primary);
+  font-size:.7rem;
+  font-weight:700;
+  padding:.4rem .7rem;
+  border-radius:9999px;
+}
+
+.producer-body{
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+  padding:.35rem 0;
+}
+
+.producer-kicker{
+  font-size:.72rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--color-primary);
+}
+
+.producer-name{
+  font-family:var(--font-heading);
+  font-size:2rem;
+  line-height:1.1;
+  margin:0;
+}
+
+.producer-location{
+  color:var(--color-muted-foreground);
+  font-size:.9rem;
+  margin:0;
+}
+
+.producer-story{
+  margin:0;
+  color:var(--color-foreground);
+  line-height:1.7;
+  font-size:.95rem;
+}
+
+.producer-seals{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+}
+
+.producer-seal{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  background:var(--color-secondary);
+  color:var(--color-secondary-foreground);
+  border-radius:9999px;
+  padding:.4rem .7rem;
+  font-size:.72rem;
+  font-weight:600;
+}
+
+.producer-meta{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:.75rem;
+}
+
+.producer-meta-item{
+  background:var(--color-muted);
+  border-radius:.8rem;
+  padding:.8rem .9rem;
+}
+
+.producer-meta-item strong{
+  display:block;
+  font-size:.7rem;
+  color:var(--color-muted-foreground);
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  margin-bottom:.2rem;
+}
+
+.producer-meta-item span{
+  font-weight:600;
+  font-size:.94rem;
+}
+
+.season-grid,
+.gallery-grid,
+.review-list{
+  display:grid;
+  gap:1rem;
+}
+
+.season-grid{
+  grid-template-columns:repeat(1, minmax(0, 1fr));
+}
+
+@media(min-width:640px){
+  .season-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media(min-width:1024px){
+  .season-grid{
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+  }
+}
+
+.season-card{
+  background:#fff;
+  border:1px solid var(--color-border);
+  border-radius:1rem;
+  overflow:hidden;
+  box-shadow:0 6px 16px rgba(0,0,0,.03);
+}
+
+.season-card .product-media{
+  height:180px;
+}
+
+.season-card .product-body{
+  padding:1rem;
+}
+
+.gallery-grid{
+  grid-template-columns:1.2fr .8fr;
+  margin-top:1.25rem;
+}
+
+.gallery-preview{
+  position:relative;
+  min-height:340px;
+  border-radius:1rem;
+  overflow:hidden;
+  background:var(--color-muted);
+}
+
+.gallery-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gallery-thumbs{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:.75rem;
+}
+
+.gallery-thumb{
+  position:relative;
+  overflow:hidden;
+  border-radius:.8rem;
+  height:160px;
+  border:2px solid transparent;
+  background:var(--color-muted);
+  cursor:pointer;
+}
+
+.gallery-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gallery-thumb.active{
+  border-color:var(--color-primary);
+}
+
+.review-list{
+  grid-template-columns:1fr;
+  margin-top:1.25rem;
+}
+
+@media(min-width:720px){
+  .review-list{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+.review-card{
+  background:#fff;
+  border:1px solid var(--color-border);
+  border-radius:1rem;
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.8rem;
+}
+
+.review-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+}
+
+.review-user{
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+}
+
+.review-avatar{
+  width:2.5rem;
+  height:2.5rem;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--color-secondary);
+  color:var(--color-primary);
+  font-weight:700;
+}
+
+.review-user strong{
+  display:block;
+  font-size:.9rem;
+}
+
+.review-user span,
+.review-date{
+  color:var(--color-muted-foreground);
+  font-size:.72rem;
+}
+
+.review-stars{
+  color:#f59e0b;
+  letter-spacing:.08em;
+  font-size:.85rem;
+}
+
+.review-comment{
+  margin:0;
+  color:var(--color-foreground);
+  line-height:1.6;
+  font-size:.9rem;
+}
+
+.status-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:180px;
+  border:1px dashed var(--color-border);
+  border-radius:1rem;
+  background:rgba(255,255,255,.5);
+  color:var(--color-muted-foreground);
+  text-align:center;
+  padding:1rem;
+}
+
+.status-box.error{
+  border-color:rgba(185,74,72,.3);
+  color:#8b3c3c;
+  background:rgba(185,74,72,.05);
+}
+
+.status-box.loading{
+  border-style:solid;
+  color:var(--color-primary);
+}
+
+@media(max-width:639px){
+  .producer-panel{
+    padding:.7rem;
+  }
+
+  .producer-name{
+    font-size:1.6rem;
+  }
+
+  .producer-meta{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-thumb{
+    height:120px;
+  }
+
+  .section-heading{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+.no-results{
+  text-align:center;
+  padding:3rem 1rem;
+  color:var(--color-muted-foreground);
+  font-size:.9375rem;
+  grid-column:1/-1;
+}
+
 
 /* ================= PRODUTO ================= */
 
@@ -594,8 +1051,9 @@ main{
 }
 
 .product-card:hover{
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-  border-color:rgba(116,198,157,.4);
+  box-shadow:0 12px 26px rgba(0,0,0,.09);
+  border-color:rgba(116,198,157,.45);
+  transform:translateY(-2px);
 }
 
 .product-media{
@@ -767,21 +1225,63 @@ main{
 .btn-add{
   font-size:.75rem;
   font-weight:600;
-  padding:.5rem .75rem;
-  border-radius:.75rem;
-  background:var(--color-primary);
+  padding:.55rem .8rem;
+  border-radius:.8rem;
+  background:linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
   color:white;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow:0 8px 16px rgba(45,106,79,.18);
 }
 
 .btn-add:hover{
-  background:var(--color-primary-hover);
+  transform:translateY(-1px);
+  box-shadow:0 10px 18px rgba(45,106,79,.22);
 }
 
 .btn-add.added{
-  background:var(--color-accent);
+  background:linear-gradient(135deg, var(--color-accent), #4dbd8c);
   color:var(--color-accent-foreground);
 }
 
+.toast-container{
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+  z-index:120;
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  pointer-events:none;
+}
+
+.toast{
+  min-width:220px;
+  max-width:320px;
+  background:rgba(26,41,26,.95);
+  color:#fff;
+  border-radius:.85rem;
+  padding:.8rem 1rem;
+  box-shadow:0 12px 25px rgba(0,0,0,.15);
+  font-size:.85rem;
+  line-height:1.4;
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity .25s ease, transform .25s ease;
+  pointer-events:auto;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.toast.success{
+  background:rgba(28,93,68,.96);
+}
+
+.toast.info{
+  background:rgba(32,71,90,.96);
+}
 
 /* ================= MODAIS ================= */
 
@@ -1056,6 +1556,84 @@ footer.site-footer{
 }
 
 @media(max-width:639px){
+  .site-header{
+    box-shadow:0 1px 2px rgba(0,0,0,.04);
+  }
+
+  .header-row{
+    height:auto;
+    padding:.55rem 0 .4rem;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+  }
+
+  .search-wrap{
+    grid-column:1 / -1;
+    max-width:none;
+    margin:0;
+    padding-top:.15rem;
+  }
+
+  .search-box{
+    padding:.55rem .75rem;
+  }
+
+  .header-actions{
+    gap:.35rem;
+  }
+
+  .btn-signin{
+    padding:.45rem .6rem;
+    font-size:.75rem;
+  }
+
+  .btn-cart{
+    width:2.25rem;
+    height:2.25rem;
+  }
+
+  .filters-nav{
+    padding-bottom:.35rem;
+    gap:.35rem;
+  }
+
+  .filter-chip{
+    padding:.4rem .65rem;
+    font-size:.7rem;
+  }
+
+  .hero-card{
+    min-height:360px;
+  }
+
+  .hero-content{
+    padding:2.2rem 1.2rem 2.5rem;
+  }
+
+  .hero-title{
+    font-size:2rem;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .btn-cta{
+    width:100%;
+    justify-content:center;
+  }
+
+  .hero-stats{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:.5rem;
+  }
+
+  .stat-pill{
+    padding:.7rem .45rem;
+  }
+
   .modal{
     padding:1.2rem;
   }
@@ -1063,64 +1641,29 @@ footer.site-footer{
   .form-row{
     grid-template-columns:1fr;
   }
-}
 
+  .payment-option{
+    padding:.7rem .75rem;
+    font-size:.85rem;
+  }
 
-/* ================= MELHORIAS ECOCONECTA ================= */
-.section-heading-row{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1rem}
-.section-kicker{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--color-primary);margin:0 0 .35rem}
-.section-subtitle{margin:.25rem 0 0;color:var(--color-muted-foreground);font-size:.9rem;line-height:1.5}
-.season-section{margin:0 auto 4rem}
-.season-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:1rem}
-@media(min-width:640px){.season-grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:900px){.season-grid{grid-template-columns:repeat(4,1fr)}}
-.season-card{background:#fff;border:1px solid var(--color-border);border-radius:1rem;padding:1rem;display:flex;gap:.8rem;align-items:center}
-.season-card img{width:64px;height:64px;border-radius:.75rem;object-fit:cover}
-.season-card strong{display:block;font-size:.9rem}
-.season-card small{display:block;color:var(--color-muted-foreground);margin-top:.2rem}
-.season-card button{margin-top:.45rem;color:var(--color-primary);font-size:.75rem;font-weight:700}
-.profile-link{margin-top:.45rem;color:var(--color-primary);font-size:.75rem;font-weight:700;text-align:left}
-.stock-note{font-size:.72rem;margin-top:.45rem;color:var(--color-muted-foreground)}
-.stock-note.out{color:#a34d4d;font-weight:600}
-.impact-box{background:linear-gradient(135deg,#edf8f0,#f8fbf2);border:1px solid #cfe6d3;border-radius:1rem;padding:1rem;margin:1rem 0}
-.impact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
-.impact-metric{background:#fff;border-radius:.75rem;padding:.75rem;border:1px solid #dfeadf}
-.impact-metric span{display:block;font-size:.72rem;color:var(--color-muted-foreground)}
-.impact-metric strong{display:block;font-size:1.1rem;color:var(--color-primary);margin-top:.15rem}
-.methodology{font-size:.75rem;color:var(--color-muted-foreground);line-height:1.5;margin:.75rem 0 0}
-.producer-group{margin:1rem 0;border:1px solid var(--color-border);border-radius:.85rem;padding:.8rem;background:#fff}
-.producer-group-header{display:flex;justify-content:space-between;gap:.5rem;font-weight:700;font-size:.82rem}
-.producer-group small{color:var(--color-muted-foreground)}
-.delivery-options{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1rem}
-.delivery-option{border:1px solid var(--color-border);border-radius:.75rem;padding:.8rem;cursor:pointer}
-.delivery-option:has(input:checked){border-color:var(--color-primary);background:#f2faf4}
-.delivery-option input{margin-right:.4rem}
-.hidden{display:none!important}
-.pickup-box{background:var(--color-muted);border-radius:.75rem;padding:.85rem;margin-bottom:1rem}
-.pix-box{border:1px solid var(--color-border);border-radius:.9rem;padding:1rem;text-align:center;margin-top:1rem;background:#fbfffb}
-.fake-qr{width:170px;height:170px;margin:.5rem auto 1rem;background:
-repeating-linear-gradient(0deg,#1a291a 0 5px,#fff 5px 10px),
-repeating-linear-gradient(90deg,transparent 0 7px,rgba(255,255,255,.8) 7px 12px);
-border:10px solid #fff;box-shadow:0 0 0 1px var(--color-border);position:relative;overflow:hidden}
-.fake-qr:before,.fake-qr:after{content:"";position:absolute;width:42px;height:42px;border:7px solid #1a291a;background:#fff;box-shadow:inset 0 0 0 7px #1a291a}
-.fake-qr:before{top:5px;left:5px}.fake-qr:after{bottom:5px;right:5px}
-.pix-key{display:flex;gap:.5rem;align-items:center}.pix-key input{flex:1;background:#fff}
-.btn-secondary{width:100%;padding:.7rem;border:1px solid var(--color-border);border-radius:.7rem;font-weight:600;color:var(--color-primary);margin-top:.5rem}
-.inline-error{padding:.7rem;border-radius:.65rem;background:#fff0f0;color:#9b4141;font-size:.8rem;margin-bottom:1rem}
-.inline-success{padding:.7rem;border-radius:.65rem;background:#eefaf1;color:var(--color-primary);font-size:.8rem;margin-bottom:1rem}
-.loading-state{padding:2rem;text-align:center;color:var(--color-muted-foreground)}
-.profile-cover{height:130px;background:linear-gradient(135deg,var(--color-primary),#74c69d);border-radius:1rem;margin-bottom:-35px}
-.profile-head{display:flex;align-items:end;gap:1rem;padding:0 1rem;margin-bottom:1rem}
-.profile-avatar{width:72px;height:72px;border-radius:50%;border:4px solid #fff;object-fit:cover;background:var(--color-muted)}
-.profile-badges{display:flex;flex-wrap:wrap;gap:.35rem;margin:.5rem 0}
-.review-card{border-top:1px solid var(--color-border);padding:.75rem 0}
-.review-card strong{font-size:.82rem}.review-card p{font-size:.8rem;color:var(--color-muted-foreground);margin:.3rem 0 0}
-.order-final{background:var(--color-muted);padding:1rem;border-radius:.8rem;text-align:left;margin:1rem 0}
-.order-final div{display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;margin:.35rem 0}
-@media(max-width:639px){
- .section-heading-row{align-items:start;flex-direction:column}
- .delivery-options,.impact-grid{grid-template-columns:1fr}
- .pix-key{flex-direction:column;align-items:stretch}
+  .modal-button{
+    padding:.8rem 1rem;
+  }
+
+  .cart-item{
+    gap:.6rem;
+  }
+
+  .cart-item img{
+    width:60px;
+    height:60px;
+  }
+
+  .quantity-controls button{
+    width:22px;
+    height:22px;
+  }
 }
 
 </style>
@@ -1270,10 +1813,28 @@ border:10px solid #fff;box-shadow:0 0 0 1px var(--color-border);position:relativ
           menor pegada de carbono e renda justa para o produtor.
         </p>
 
-        <div>
+        <div class="hero-actions">
           <a href="#vitrine" class="btn-cta">
             Explorar Produtos
           </a>
+          <a href="#como-funciona" class="btn-cta secondary">
+            Como funciona
+          </a>
+        </div>
+
+        <div class="hero-stats" aria-label="Estatísticas da plataforma">
+          <div class="stat-pill">
+            <strong>18k+</strong>
+            <span>pedidos</span>
+          </div>
+          <div class="stat-pill">
+            <strong>92%</strong>
+            <span>reaproveitamento</span>
+          </div>
+          <div class="stat-pill">
+            <strong>48h</strong>
+            <span>para entrega</span>
+          </div>
         </div>
 
       </div>
@@ -1282,19 +1843,52 @@ border:10px solid #fff;box-shadow:0 0 0 1px var(--color-border);position:relativ
 
   </section>
 
-  
-<section class="season-section container" id="safras">
-  <div class="section-heading-row">
-    <div>
-      <p class="section-kicker">🌱 Produção da semana</p>
-      <h2 class="catalog-title" style="margin-bottom:.25rem;">Safras da Semana</h2>
-      <p class="section-subtitle">Produtos em destaque por estarem na safra e com disponibilidade simulada.</p><button class="btn-secondary" style="width:auto;" onclick="openWeeklyBasket()">🥬 Montar cesta semanal</button>
-    </div>
-  </div>
-  <div id="seasonGrid" class="season-grid"></div>
-</section>
+  <section id="como-funciona" class="features-strip container" aria-label="Benefícios da plataforma">
+    <article class="feature-item">
+      <div class="feature-icon">📦</div>
+      <div class="feature-copy">
+        <h3>Entrega local</h3>
+        <p>Produtos saem do produtor e chegam até você em poucos dias.</p>
+      </div>
+    </article>
 
-<section id="vitrine" class="catalog-section container">
+    <article class="feature-item">
+      <div class="feature-icon">🌿</div>
+      <div class="feature-copy">
+        <h3>Rastreio real</h3>
+        <p>Você acompanha origem, produção e impacto ambiental de cada item.</p>
+      </div>
+    </article>
+
+    <article class="feature-item">
+      <div class="feature-icon">💚</div>
+      <div class="feature-copy">
+        <h3>Preço justo</h3>
+        <p>Sem atravessadores: mais valor para quem planta e menos custo para você.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="container">
+    <div class="section-heading">
+      <h2>Perfil do Produtor</h2>
+      <span>História & origem</span>
+    </div>
+
+    <div class="producer-panel" id="producerPanel">
+      <div class="status-box loading">Carregando perfil do produtor…</div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="section-heading">
+      <h2>Safras da Semana</h2>
+      <span>Seleção fresca</span>
+    </div>
+    <div id="seasonGrid" class="season-grid"></div>
+  </section>
+
+  <section id="vitrine" class="catalog-section container">
 
     <h2 class="catalog-title">
       Catálogo de Produtos
@@ -1378,7 +1972,7 @@ border:10px solid #fff;box-shadow:0 0 0 1px var(--color-border);position:relativ
       </details>
 
       <!-- ============ GRADE DE PRODUTOS ============ -->
-      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+      <div id="productGrid" class="product-grid"></div>
 
     </div>
 
@@ -1612,164 +2206,307 @@ border:10px solid #fff;box-shadow:0 0 0 1px var(--color-border);position:relativ
 
 <!-- ================= PAGAMENTO ================= -->
 
-<div id="paymentModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
+<div id="paymentModal" class="modal-overlay">
+
   <div class="modal modal-large">
+
     <div class="modal-header">
-      <h2 class="modal-title" id="paymentTitle">💳 Finalizar compra</h2>
-      <button class="close-modal" type="button" onclick="closeModal('paymentModal')" aria-label="Fechar">×</button>
+
+      <h2 class="modal-title">
+        💳 Finalizar compra
+      </h2>
+
+      <button
+        class="close-modal"
+        onclick="closeModal('paymentModal')"
+      >
+        ×
+      </button>
+
     </div>
 
-    <div id="checkoutError" class="inline-error hidden" role="alert"></div>
 
     <div class="order-summary">
-      <div class="order-summary-row"><span>Produtos</span><strong id="paymentProducts">R$ 0,00</strong></div>
-      <div class="order-summary-row"><span>Frete</span><strong id="paymentShipping">Grátis</strong></div>
-      <div class="order-summary-row"><span>Total</span><strong id="paymentTotal">R$ 0,00</strong></div>
+
+      <div class="order-summary-row">
+        <span>Produtos</span>
+        <strong id="paymentProducts">
+          R$ 0,00
+        </strong>
+      </div>
+
+      <div class="order-summary-row">
+        <span>Frete</span>
+        <strong>Grátis</strong>
+      </div>
+
+      <div class="order-summary-row">
+        <span>Total</span>
+        <strong id="paymentTotal">
+          R$ 0,00
+        </strong>
+      </div>
+
     </div>
 
-    <div id="checkoutImpact" class="impact-box"></div>
 
     <form id="paymentForm">
-      <div class="form-group">
-        <label for="customerName">Nome completo</label>
-        <input type="text" id="customerName" placeholder="Digite seu nome" autocomplete="name" required>
-      </div>
 
       <div class="form-group">
-        <label>Como deseja receber?</label>
-        <div class="delivery-options">
-          <label class="delivery-option">
-            <input type="radio" name="deliveryType" value="delivery" checked>
-            🚚 Entrega em domicílio
-          </label>
-          <label class="delivery-option">
-            <input type="radio" name="deliveryType" value="pickup">
-            📍 Retirada em ponto
-          </label>
-        </div>
+
+        <label>
+          Nome completo
+        </label>
+
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Digite seu nome"
+          required
+        >
+
       </div>
 
-      <div id="deliveryFields">
-        <div class="form-group">
-          <label for="customerAddress">Endereço de entrega</label>
-          <input type="text" id="customerAddress" placeholder="Rua, número e bairro" autocomplete="street-address">
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="customerCity">Cidade</label>
-            <input type="text" id="customerCity" placeholder="Sua cidade" autocomplete="address-level2">
-          </div>
-          <div class="form-group">
-            <label for="customerCep">CEP</label>
-            <input type="text" id="customerCep" placeholder="00000-000" inputmode="numeric" maxlength="9" autocomplete="postal-code">
-          </div>
-        </div>
+
+      <div class="form-group">
+
+        <label>
+          Endereço de entrega
+        </label>
+
+        <input
+          type="text"
+          id="customerAddress"
+          placeholder="Rua, número e bairro"
+          required
+        >
+
       </div>
 
-      <div id="pickupFields" class="pickup-box hidden">
-        <div class="form-group">
-          <label for="pickupPoint">Ponto de retirada</label>
-          <select id="pickupPoint"></select>
-        </div>
-      </div>
 
       <div class="form-row">
+
         <div class="form-group">
-          <label for="deliveryDate">Data</label>
-          <select id="deliveryDate" required></select>
+
+          <label>
+            Cidade
+          </label>
+
+          <input
+            type="text"
+            id="customerCity"
+            placeholder="Sua cidade"
+            required
+          >
+
         </div>
+
+
         <div class="form-group">
-          <label for="deliveryTime">Horário</label>
-          <select id="deliveryTime" required>
-            <option value="08:00–10:00">08:00–10:00</option>
-            <option value="10:00–12:00">10:00–12:00</option>
-            <option value="14:00–16:00">14:00–16:00</option>
-            <option value="16:00–18:00">16:00–18:00</option>
-          </select>
+
+          <label>
+            CEP
+          </label>
+
+          <input
+            type="text"
+            id="customerCep"
+            placeholder="00000-000"
+            required
+          >
+
         </div>
+
       </div>
+
 
       <div class="form-group">
-        <label>Forma de pagamento</label>
+
+        <label>
+          Forma de pagamento
+        </label>
+
         <div class="payment-methods">
-          <label class="payment-option"><input type="radio" name="payment" value="pix" checked> 💚 PIX (simulado)</label>
-          <label class="payment-option"><input type="radio" name="payment" value="card"> 💳 Cartão (simulado)</label>
-          <label class="payment-option"><input type="radio" name="payment" value="boleto"> 📄 Boleto (simulado)</label>
+
+          <label class="payment-option">
+
+            <input
+              type="radio"
+              name="payment"
+              value="pix"
+              checked
+            >
+
+            <span>💚 PIX</span>
+
+          </label>
+
+
+          <label class="payment-option">
+
+            <input
+              type="radio"
+              name="payment"
+              value="card"
+            >
+
+            <span>💳 Cartão</span>
+
+          </label>
+
+
+          <label class="payment-option">
+
+            <input
+              type="radio"
+              name="payment"
+              value="boleto"
+            >
+
+            <span>📄 Boleto</span>
+
+          </label>
+
         </div>
+
       </div>
 
-      <div id="cardFields" class="hidden">
+
+      <div id="cardFields" style="display:none;">
+
         <div class="form-group">
-          <label for="cardNumber">Número do cartão (somente demonstração)</label>
-          <input id="cardNumber" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="off">
+
+          <label>
+            Número do cartão
+          </label>
+
+          <input
+            type="text"
+            placeholder="0000 0000 0000 0000"
+            maxlength="19"
+          >
+
         </div>
+
+
         <div class="form-row">
-          <div class="form-group"><label for="cardExpiry">Validade</label><input id="cardExpiry" type="text" placeholder="MM/AA" maxlength="5" autocomplete="off"></div>
-          <div class="form-group"><label for="cardCvv">CVV</label><input id="cardCvv" type="password" placeholder="123" maxlength="4" autocomplete="off"></div>
+
+          <div class="form-group">
+
+            <label>
+              Validade
+            </label>
+
+            <input
+              type="text"
+              placeholder="MM/AA"
+              maxlength="5"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>
+              CVV
+            </label>
+
+            <input
+              type="text"
+              placeholder="123"
+              maxlength="4"
+            >
+
+          </div>
+
         </div>
+
       </div>
 
-      <div id="pixFields" class="pix-box">
-        <strong>PIX fictício para demonstração</strong>
-        <div class="fake-qr" aria-label="QR Code fictício"></div>
-        <div class="pix-key">
-          <input id="pixKey" type="text" value="ecoconecta.demo@pix.exemplo" readonly aria-label="Chave PIX fictícia">
-          <button type="button" class="btn-secondary" style="width:auto;margin:0;" onclick="copyPixKey()">Copiar chave</button>
-        </div>
-        <p class="methodology">Este QR Code e esta chave são fictícios e não realizam pagamentos reais.</p>
-      </div>
 
-      <div class="order-summary" style="margin-top:1rem;">
-        <strong>Resumo por produtor</strong>
-        <div id="checkoutProducerSummary"></div>
-      </div>
+      <button
+        class="modal-button"
+        type="submit"
+      >
+        Confirmar pedido
+      </button>
 
-      <button class="modal-button" type="submit">Confirmar pedido simulado</button>
     </form>
+
   </div>
+
 </div>
 
 <!-- ================= PEDIDO CONFIRMADO ================= -->
 
-<div id="successModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="successTitle">
-  <div class="modal modal-large">
-    <div class="success-message">
-      <div class="success-icon">✓</div>
-      <h2 class="modal-title" id="successTitle">Pedido realizado!</h2>
-      <p>Obrigado pela sua compra. 🌱</p>
-      <div id="finalOrderSummary" class="order-final"></div>
-      <p style="color:var(--color-muted-foreground);font-size:.875rem;">
-        Seu pedido foi registrado como uma simulação local neste navegador.
-      </p>
-      <button class="modal-button" onclick="closeModal('successModal')">Voltar para a loja</button>
-    </div>
-  </div>
-</div>
+<div id="successModal" class="modal-overlay">
 
-
-<!-- ================= PERFIL DO PRODUTOR ================= -->
-<div id="producerModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="producerTitle">
-  <div class="modal modal-large">
-    <div class="modal-header">
-      <h2 class="modal-title" id="producerTitle">Perfil do produtor</h2>
-      <button class="close-modal" onclick="closeModal('producerModal')" aria-label="Fechar">×</button>
-    </div>
-    <div id="producerProfile"></div>
-  </div>
-</div>
-
-<!-- ================= CESTA SEMANAL ================= -->
-<div id="basketModal" class="modal-overlay" role="dialog" aria-modal="true">
   <div class="modal">
-    <div class="modal-header">
-      <h2 class="modal-title">🥬 Cesta da Semana</h2>
-      <button class="close-modal" onclick="closeModal('basketModal')" aria-label="Fechar">×</button>
+
+    <div class="success-message">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <h2 class="modal-title">
+        Pedido realizado!
+      </h2>
+
+      <p style="margin:.2rem 0 .4rem; font-weight:600; color:var(--color-primary);">
+        Código do pedido: <span id="successOrderId">ECH-0000</span>
+      </p>
+
+      <p>
+        Obrigado pela sua compra. 🌱
+      </p>
+
+      <p style="color:var(--color-muted-foreground);font-size:.875rem; margin-bottom:1rem;">
+        Seu pedido foi registrado com sucesso e já está sendo preparado com carinho.
+      </p>
+
+      <div class="order-summary" style="margin-bottom:1rem; text-align:left;">
+        <div class="order-summary-row">
+          <span>Itens</span>
+          <strong id="successItemCount">0</strong>
+        </div>
+        <div class="order-summary-row">
+          <span>Pagamento</span>
+          <strong id="successPaymentMethod">PIX</strong>
+        </div>
+        <div class="order-summary-row">
+          <span>Total</span>
+          <strong id="successTotal">R$ 0,00</strong>
+        </div>
+      </div>
+
+      <div style="display:grid; gap:.75rem;">
+        <button
+          class="modal-button"
+          onclick="closeModal('successModal'); document.getElementById('vitrine').scrollIntoView({behavior:'smooth'});"
+        >
+          Voltar para a vitrine
+        </button>
+
+        <button
+          class="btn-clear-filters"
+          onclick="closeModal('successModal')"
+          style="margin-top:0;"
+        >
+          Continuar navegando
+        </button>
+      </div>
+
     </div>
-    <p>Uma cesta demonstrativa com produtos da safra. Você pode adicioná-la ao carrinho com desconto simulado.</p>
-    <div id="basketPreview" class="order-summary"></div>
-    <button class="modal-button" onclick="addWeeklyBasket()">Adicionar cesta ao carrinho</button>
+
   </div>
+
 </div>
+
+<!-- ================= TOASTS ================= -->
+
+<div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
 <!-- ================= RODAPÉ ================= -->
 
@@ -2127,6 +2864,47 @@ const CATEGORIES = [
   "Temperos e Ervas"
 ];
 
+const PRODUCERS_FALLBACK = [
+  {
+    id: 1,
+    name: "Família Rossi",
+    title: "Agricultores familiares da Serra Gaúcha",
+    location: "Serra Gaúcha, RS",
+    story: "A família Rossi cultiva alimentos com foco em terra viva, produção em pequenas áreas e respeito ao ciclo natural. Há mais de 20 anos a propriedade combina tradição e técnicas cuidadosas para produzir frutas e hortaliças com sabor autêntico.",
+    practice: "Produção com baixa intervenção química e manejo regenerativo.",
+    certifications: ["Orgânico", "Comércio Justo", "Acompanhamento de origem"],
+    photo: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1464226184884-fa520f5a7d3b?w=1200&q=80",
+      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1200&q=80",
+      "https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=1200&q=80",
+      "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?w=1200&q=80"
+    ],
+    reviews: [
+      {
+        name: "Carla M.",
+        rating: 5,
+        comment: "Entrega impecável e produtos com sabor de verdade. A qualidade do tomate cereja e da alface foi maravilhosa.",
+        date: "12/08/2026",
+        avatar: "CM"
+      },
+      {
+        name: "Renato P.",
+        rating: 4,
+        comment: "A comunicação com o produtor foi ótima e o cuidado com a origem ficou muito claro. Recomendo bastante.",
+        date: "28/07/2026",
+        avatar: "RP"
+      }
+    ]
+  }
+];
+
+const producerState = {
+  producers: [],
+  loading: true,
+  error: false
+};
+
 
 /* ================= ÍCONES ================= */
 
@@ -2382,6 +3160,170 @@ function render(products){
 
 }
 
+function renderSeasonProducts(){
+  const seasonGrid = document.getElementById("seasonGrid");
+
+  if (!Array.isArray(ALL_PRODUCTS) || ALL_PRODUCTS.length === 0) {
+    seasonGrid.innerHTML = '<div class="status-box empty">Ainda não há safras desta semana.</div>';
+    return;
+  }
+
+  const featured = ALL_PRODUCTS.slice(0, 4);
+  seasonGrid.innerHTML = featured.map(product => `
+    <article class="season-card">
+      <div class="product-media">
+        <img src="${product.image}" alt="${product.name}" loading="lazy">
+        ${product.badge ? `<span class="badge ${BADGE_CLASS[product.badgeColor] || "badge-accent"}">${product.badge}</span>` : ""}
+      </div>
+      <div class="product-body">
+        <p class="product-category">${product.category}</p>
+        <h3 class="product-name">${product.name}</h3>
+        <p class="product-origin">${product.origin}</p>
+        <div class="product-footer">
+          <div class="product-price">
+            <span class="amount">${fmtCurrency(product.price)}</span>
+            <span class="unit">/${product.unit}</span>
+          </div>
+          <button class="btn-add" data-id="${product.id}">+ Adicionar</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+async function loadProducers(){
+  producerState.loading = true;
+  producerState.error = false;
+  renderProducerState();
+
+  try {
+    const response = await fetch("producers.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("Falha ao carregar dados do produtor");
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data) || data.length === 0) {
+      producerState.producers = [];
+      producerState.loading = false;
+      renderProducerState();
+      return;
+    }
+
+    producerState.producers = data;
+    producerState.loading = false;
+    renderProducerState();
+  } catch (error) {
+    producerState.producers = PRODUCERS_FALLBACK;
+    producerState.loading = false;
+    producerState.error = true;
+    renderProducerState();
+  }
+}
+
+function renderProducerState(){
+  const panel = document.getElementById("producerPanel");
+
+  if (producerState.loading) {
+    panel.innerHTML = '<div class="status-box loading">Carregando perfil do produtor…</div>';
+    return;
+  }
+
+  if (producerState.error && producerState.producers.length === 0) {
+    panel.innerHTML = '<div class="status-box error">Não foi possível carregar os dados do produtor no momento.</div>';
+    return;
+  }
+
+  if (!producerState.producers || producerState.producers.length === 0) {
+    panel.innerHTML = '<div class="status-box empty">Nenhum perfil de produtor disponível.</div>';
+    return;
+  }
+
+  const producer = producerState.producers[0];
+
+  panel.innerHTML = `
+    <div class="producer-card">
+      <div class="producer-hero">
+        <img src="${producer.photo}" alt="${producer.name}">
+        <span class="producer-hero-badge">Produtor Local</span>
+      </div>
+
+      <div class="producer-body">
+        <span class="producer-kicker">Produtor</span>
+        <h3 class="producer-name">${producer.name}</h3>
+        <p class="producer-location">📍 ${producer.location}</p>
+        <p class="producer-story">${producer.story}</p>
+
+        <div class="producer-seals">
+          ${(producer.certifications || []).map(item => `<span class="producer-seal">✓ ${item}</span>`).join("")}
+        </div>
+
+        <div class="producer-meta">
+          <div class="producer-meta-item">
+            <strong>Prática</strong>
+            <span>${producer.practice}</span>
+          </div>
+          <div class="producer-meta-item">
+            <strong>Especialidade</strong>
+            <span>${producer.title}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-preview">
+        <img id="galleryMainImage" src="${(producer.gallery || [producer.photo])[0]}" alt="Galeria do produtor">
+      </div>
+      <div class="gallery-thumbs">
+        ${(producer.gallery || []).map((image, index) => `
+          <button class="gallery-thumb ${index === 0 ? "active" : ""}" type="button" data-image="${image}">
+            <img src="${image}" alt="Foto ${index + 1} da propriedade">
+          </button>
+        `).join("")}
+      </div>
+    </div>
+
+    <div class="section-heading" style="margin-top:1.25rem; margin-bottom:0.75rem;">
+      <h2 style="font-size:1.35rem;">Avaliações</h2>
+      <span>Compradores</span>
+    </div>
+    <div class="review-list">
+      ${(producer.reviews || []).map(review => `
+        <article class="review-card">
+          <div class="review-header">
+            <div class="review-user">
+              <div class="review-avatar">${review.avatar || review.name.slice(0, 2).toUpperCase()}</div>
+              <div>
+                <strong>${review.name}</strong>
+                <span>${review.date}</span>
+              </div>
+            </div>
+            <div class="review-stars" aria-label="${review.rating} estrelas">${"★".repeat(Math.round(review.rating))}${"☆".repeat(5 - Math.round(review.rating))}</div>
+          </div>
+          <p class="review-comment">${review.comment}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+
+  bindGalleryHandlers();
+}
+
+function bindGalleryHandlers(){
+  document.querySelectorAll(".gallery-thumb").forEach(button => {
+    button.addEventListener("click", () => {
+      const image = button.dataset.image;
+      const preview = document.getElementById("galleryMainImage");
+      if (preview) {
+        preview.src = image;
+      }
+      document.querySelectorAll(".gallery-thumb").forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
+    });
+  });
+}
 
 /* =========================================================
    SIDEBAR — monta a lista de categorias (checkbox) e liga
@@ -2836,6 +3778,7 @@ function addToCart(productId){
   saveCart();
   updateCartBadge();
   renderCart();
+  showToast(`${product.name} adicionado ao carrinho!`, "success");
 
 }
 
@@ -2920,6 +3863,10 @@ function renderCart(){
           Adicione produtos para começar sua compra.
         </p>
 
+        <button class="modal-button" onclick="closeModal('cartModal')" style="margin-top:1rem;">
+          Continuar comprando
+        </button>
+
       </div>
 
     `;
@@ -2997,6 +3944,26 @@ function renderCart(){
 
 
 /* ================= MODAIS ================= */
+
+function showToast(message, type = "success"){
+
+  const container = document.getElementById("toastContainer");
+  const toast = document.createElement("div");
+  toast.className = `toast ${type}`;
+  toast.textContent = message;
+
+  container.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    toast.classList.add("show");
+  });
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 250);
+  }, 2200);
+}
+
 
 function openModal(id){
 
@@ -3163,8 +4130,51 @@ function updateSigninButton(){
 }
 
 
-/* -------- Formulário Entrar/Cadastrar --------
-   Implementação final definida na camada de melhorias abaixo. */
+/* -------- Formulário Entrar -------- */
+
+document
+  .getElementById("loginForm")
+  .addEventListener(
+    "submit",
+    (e) => {
+
+      e.preventDefault();
+
+
+      const email =
+        document
+          .getElementById("loginEmail")
+          .value;
+
+
+      // Se já existir um cadastro salvo com esse e-mail,
+      // usamos o nome dele; senão, guardamos só o e-mail.
+      const stored =
+        JSON.parse(
+          localStorage.getItem("ecoConectaUser") || "null"
+        );
+
+      const user =
+        stored && stored.email === email
+          ? stored
+          : { email };
+
+      localStorage.setItem(
+        "ecoConectaUser",
+        JSON.stringify(user)
+      );
+
+      updateSigninButton();
+
+      closeModal("loginModal");
+
+      showToast("Login realizado com sucesso! 🌱", "success");
+
+    }
+  );
+
+
+/* -------- Formulário Cadastrar -------- */
 
 document
   .getElementById("registerForm")
@@ -3208,9 +4218,7 @@ document
       e.target.reset();
 
 
-      alert(
-        `Cadastro realizado com sucesso! Bem-vindo(a), ${user.firstName}! 🌱`
-      );
+      showToast(`Cadastro realizado com sucesso! Bem-vindo(a), ${user.firstName}! 🌱`, "success");
 
     }
   );
@@ -3222,10 +4230,7 @@ function goToCheckout(){
 
   if(cart.length === 0){
 
-    alert(
-      "Seu carrinho está vazio."
-    );
-
+    showToast("Seu carrinho está vazio. Adicione algum produto antes de finalizar.", "info");
     return;
 
   }
@@ -3291,7 +4296,79 @@ document
 
 
 /* ================= FINALIZAR PEDIDO ================= */
-/* Implementação final definida na camada de melhorias abaixo. */
+
+document
+  .getElementById("paymentForm")
+  .addEventListener(
+    "submit",
+    (e) => {
+
+      e.preventDefault();
+
+
+      const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+      const total = getCartTotal();
+      const orderId = `ECH-${String(Math.floor(Math.random() * 90000) + 10000)}`;
+
+      const order = {
+
+        customer:
+          document.getElementById(
+            "customerName"
+          ).value,
+
+        address:
+          document.getElementById(
+            "customerAddress"
+          ).value,
+
+        city:
+          document.getElementById(
+            "customerCity"
+          ).value,
+
+        cep:
+          document.getElementById(
+            "customerCep"
+          ).value,
+
+        payment: paymentMethod,
+
+        products:cart,
+
+        total,
+
+        date:new Date().toISOString(),
+        orderId
+
+      };
+
+
+      localStorage.setItem(
+        "lastOrder",
+        JSON.stringify(order)
+      );
+
+      document.getElementById("successOrderId").textContent = orderId;
+      document.getElementById("successPaymentMethod").textContent = paymentMethod.toUpperCase();
+      document.getElementById("successTotal").textContent = fmtCurrency(total);
+      document.getElementById("successItemCount").textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+      cart = [];
+
+
+      saveCart();
+      updateCartBadge();
+      renderCart();
+
+
+      closeModal("paymentModal");
+
+      openModal("successModal");
+
+    }
+  );
+
 
 /* ================= FECHAR CLICANDO FORA ================= */
 
@@ -3319,431 +4396,13 @@ document
   );
 
 
-
-/* =========================================================
-   CAMADA DE MOCKS / REQUISITOS DE FRONT-END
-   Dados locais equivalentes a producers.json, products.json
-   e pickup-points.json para esta etapa sem back-end.
-   ========================================================= */
-
-const PRODUCT_META = {
-  1:{season:"Setembro–Dezembro",inSeason:true,stock:18,harvest:"Safra atual"},
-  2:{season:"Maio–Dezembro",inSeason:true,stock:24,harvest:"Safra atual"},
-  3:{season:"Abril–Outubro",inSeason:true,stock:12,harvest:"Safra atual"},
-  4:{season:"Ano todo",inSeason:true,stock:8,harvest:"Produção contínua"},
-  5:{season:"Março–Agosto",inSeason:false,stock:0,harvest:"Fora de safra"},
-  6:{season:"Ano todo",inSeason:true,stock:20,harvest:"Disponível"},
-  7:{season:"Ano todo",inSeason:true,stock:15,harvest:"Disponível"},
-  8:{season:"Janeiro–Maio",inSeason:false,stock:0,harvest:"Fora de safra"},
-  9:{season:"Maio–Agosto",inSeason:false,stock:6,harvest:"Estoque limitado"},
-  10:{season:"Ano todo",inSeason:true,stock:14,harvest:"Disponível"},
-  11:{season:"Março–Agosto",inSeason:false,stock:0,harvest:"Fora de safra"},
-  12:{season:"Janeiro–Junho",inSeason:false,stock:5,harvest:"Estoque limitado"},
-  13:{season:"Agosto–Janeiro",inSeason:true,stock:16,harvest:"Safra atual"},
-  14:{season:"Agosto–Dezembro",inSeason:true,stock:10,harvest:"Safra atual"},
-  15:{season:"Ano todo",inSeason:true,stock:20,harvest:"Disponível"},
-  16:{season:"Setembro–Abril",inSeason:true,stock:13,harvest:"Safra atual"},
-  17:{season:"Abril–Dezembro",inSeason:true,stock:11,harvest:"Safra atual"},
-  18:{season:"Agosto–Fevereiro",inSeason:true,stock:17,harvest:"Safra atual"}
-};
-
-const PRODUCERS = {
-  "Família Rossi": {
-    location:"Serra Gaúcha, RS",methods:"Manejo sustentável e redução de insumos químicos",
-    story:"Pequena produção familiar dedicada a hortaliças frescas e venda direta.",
-    badges:["Produtor local","Rastreabilidade"],
-    photos:[
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700&q=80",
-      "https://images.unsplash.com/photo-1592419044706-39796d40f98c?w=700&q=80",
-      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=700&q=80"
-    ],
-    reviews:[["Marina","5.0","Produto fresco e muito bem embalado."],["Carlos","4.8","Gostei de conhecer a origem."]]
-  },
-  "Sítio Verde Vivo": {
-    location:"Campinas, SP",methods:"Cultivo orgânico certificado e compostagem",
-    story:"Sítio familiar que trabalha com hortaliças orgânicas e entrega curta.",
-    badges:["Orgânico","Certificado"],
-    photos:["https://images.unsplash.com/photo-1560493676-04071c5f467b?w=700&q=80","https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=700&q=80"],
-    reviews:[["Ana","4.9","Cenouras muito frescas."],["João","4.7","Boa qualidade e rastreabilidade."]]
-  },
-  "Família Tanaka": {
-    location:"Atibaia, SP",methods:"Cultivo integrado e controle biológico",
-    story:"Família produtora de frutas com foco em qualidade, sazonalidade e venda direta.",
-    badges:["Produtor familiar","Safra"],
-    photos:["https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=700&q=80","https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=700&q=80"],
-    reviews:[["Luiza","5.0","Morango excelente."],["Pedro","4.8","Muito saboroso."]]
-  },
-  "Apiário Cerrado": {
-    location:"Chapada Diamantina, BA",methods:"Apicultura de baixo impacto e manejo responsável",
-    story:"Apiário familiar com produção de mel e valorização da biodiversidade local.",
-    badges:["Rastreável","Biodiversidade"],
-    photos:["https://images.unsplash.com/photo-1471943038886-87c772c2fcb1?w=700&q=80","https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=700&q=80"],
-    reviews:[["Bia","5.0","Mel muito saboroso."],["Rafael","5.0","Gostei da história do produtor."]]
-  }
-};
-Object.keys(PRODUCERS).forEach(name=>{
-  if(!PRODUCERS[name]) return;
-});
-const DEFAULT_PRODUCER = {
-  location:"Brasil",methods:"Boas práticas agrícolas e produção familiar",
-  story:"Produtor participante da rede Code Horizon, com venda direta e rastreabilidade simulada.",
-  badges:["Produtor local"],photos:["https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80"],
-  reviews:[["Comprador","4.8","Boa experiência de compra."]]
-};
-
-const PICKUP_POINTS = [
-  {id:"sp-centro",name:"Ponto Verde — Centro",city:"São Paulo, SP",address:"Praça da República, 100"},
-  {id:"campinas",name:"Feira Sustentável Campinas",city:"Campinas, SP",address:"Av. Norte-Sul, 500"},
-  {id:"sorocaba",name:"Mercado Local Sorocaba",city:"Sorocaba, SP",address:"Rua das Flores, 220"},
-  {id:"curitiba",name:"Hub Agro Curitiba",city:"Curitiba, PR",address:"Rua das Araucárias, 80"}
-];
-
-function metaFor(p){ return PRODUCT_META[p.id] || {season:"A consultar",inSeason:true,stock:10,harvest:"Disponível"}; }
-function producerFor(name){ return PRODUCERS[name] || DEFAULT_PRODUCER; }
-function isAvailable(p){ return metaFor(p).stock > 0 && metaFor(p).inSeason; }
-function getProducerGroups(items){
-  return items.reduce((groups,item)=>{
-    const p = ALL_PRODUCTS.find(x=>x.id===item.id);
-    const farmer = p?.farmer || item.farmer || "Produtor não informado";
-    (groups[farmer] ||= []).push(item);
-    return groups;
-  },{});
-}
-function getCartCarbon(){
-  return cart.reduce((sum,item)=>{
-    const p=ALL_PRODUCTS.find(x=>x.id===item.id);
-    return sum + (p?.carbon || item.carbon || 0) * item.quantity;
-  },0);
-}
-function getFamilySupport(){
-  return getCartTotal() * .85;
-}
-function showCheckoutError(msg){
-  const box=document.getElementById("checkoutError");
-  box.textContent=msg; box.classList.remove("hidden");
-}
-function clearCheckoutError(){
-  const box=document.getElementById("checkoutError");
-  box.textContent=""; box.classList.add("hidden");
-}
-
-/* ---------- Safras ---------- */
-function renderSeason(){
-  const grid=document.getElementById("seasonGrid");
-  if(!grid) return;
-  const season=ALL_PRODUCTS.filter(p=>isAvailable(p)).slice(0,8);
-  grid.innerHTML=season.map(p=>{
-    const m=metaFor(p);
-    return `<article class="season-card">
-      <img src="${p.image}" alt="${p.name}" loading="lazy">
-      <div>
-        <strong>${p.name}</strong>
-        <small>${m.harvest} · ${m.stock} un.</small>
-        <button type="button" onclick="addToCart(${p.id})">+ Adicionar</button>
-      </div>
-    </article>`;
-  }).join("");
-}
-
-/* ---------- Card de produto melhorado ---------- */
-function productCardHTML(p){
-  const m=metaFor(p);
-  const badge=p.badge ? `<span class="badge ${BADGE_CLASS[p.badgeColor] || "badge-accent"}">${p.badge}</span>` : "";
-  const bio=p.organic ? `<span class="badge-bio">${leafIconSVG}<span>Bio</span></span>` : "";
-  const certifiedTag=p.certified ? `<span class="tag tag-certified">✓ Certificado</span>` : "";
-  const unavailable=!isAvailable(p);
-  const status=unavailable
-    ? `<div class="stock-note out">⚠ ${m.harvest}${m.stock===0 ? " · sem estoque" : ""}</div>`
-    : `<div class="stock-note">✓ ${m.stock} disponíveis · ${m.harvest}</div>`;
-  return `<article class="product-card" data-id="${p.id}">
-    <div class="product-media">
-      <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.opacity='.35'">
-      ${badge}${bio}
-    </div>
-    <div class="product-body">
-      <p class="product-category">${p.category}</p>
-      <h3 class="product-name">${p.name}</h3>
-      <p class="product-origin">${p.farmer} · ${p.origin}</p>
-      <div class="product-rating">${starIconSVG}<span class="rating-num">${p.rating.toFixed(1)}</span><span class="rating-count">(${p.reviews})</span></div>
-      <div class="product-tags">${certifiedTag}<span class="tag tag-distance">📍 ${p.distance} km</span></div>
-      <div class="product-carbon">🌱 <span>${p.carbon} kg CO₂ economizado/un.</span></div>
-      ${status}
-      <button type="button" class="profile-link" onclick="openProducerProfile('${p.farmer.replace(/'/g,"\\'")}')">👨‍🌾 Ver perfil do produtor</button>
-      <div class="product-footer">
-        <div class="product-price"><span class="amount">${fmtCurrency(p.price)}</span><span class="unit">/${p.unit}</span></div>
-        <button type="button" class="btn-add ${unavailable ? "disabled" : ""}" data-id="${p.id}" ${unavailable ? "disabled" : ""}>
-          ${unavailable ? "Indisponível" : "+ Adicionar"}
-        </button>
-      </div>
-    </div>
-  </article>`;
-}
-
-function render(products){
-  const grid=document.getElementById("productGrid");
-  document.getElementById("productCount").textContent=products.length;
-  if(!products.length){
-    grid.innerHTML=`<div class="no-results"><div style="font-size:2rem;">🌱</div><p>Nenhum produto encontrado com esses filtros.</p><p style="font-size:.8rem;">Tente outra categoria, região ou termo de busca.</p></div>`;
-    return;
-  }
-  grid.innerHTML=products.map(productCardHTML).join("");
-}
-
-/* ---------- Carrinho por produtor + impacto ---------- */
-function addToCart(productId){
-  const product=ALL_PRODUCTS.find(p=>p.id===productId);
-  if(!product || !isAvailable(product)){
-    alert("Este produto está fora de safra ou sem estoque no momento.");
-    return;
-  }
-  const m=metaFor(product);
-  const existing=cart.find(item=>item.id===productId);
-  if(existing){
-    if(existing.quantity>=m.stock){ alert(`Estoque máximo simulado: ${m.stock} unidade(s).`); return; }
-    existing.quantity++;
-  }else{
-    cart.push({id:product.id,name:product.name,price:product.price,unit:product.unit,image:product.image,quantity:1,farmer:product.farmer,carbon:product.carbon});
-  }
-  saveCart(); updateCartBadge(); renderCart();
-}
-function changeQuantity(productId,change){
-  const item=cart.find(item=>item.id===productId);
-  if(!item) return;
-  const product=ALL_PRODUCTS.find(p=>p.id===productId), max=metaFor(product).stock;
-  item.quantity += change;
-  if(item.quantity>max) item.quantity=max;
-  if(item.quantity<=0) cart=cart.filter(x=>x.id!==productId);
-  saveCart(); updateCartBadge(); renderCart();
-}
-function renderCart(){
-  const container=document.getElementById("cartItems"), total=document.getElementById("cartTotal");
-  if(!cart.length){
-    container.innerHTML=`<div class="empty-cart"><div style="font-size:2.5rem;">🛒</div><p>Seu carrinho está vazio.</p><p style="font-size:.8rem;">Adicione produtos para começar sua compra.</p></div>`;
-    total.textContent=fmtCurrency(0); return;
-  }
-  const groups=getProducerGroups(cart);
-  container.innerHTML=Object.entries(groups).map(([farmer,items])=>{
-    const subtotal=items.reduce((s,i)=>s+i.price*i.quantity,0);
-    return `<div class="producer-group">
-      <div class="producer-group-header"><span>👨‍🌾 ${farmer}</span><span>${fmtCurrency(subtotal)}</span></div>
-      <small>Resumo por produtor</small>
-      ${items.map(item=>`<div class="cart-item">
-        <img src="${item.image}" alt="${item.name}">
-        <div class="cart-item-info">
-          <p class="cart-item-name">${item.name}</p>
-          <div class="cart-item-price">${fmtCurrency(item.price)} / ${item.unit}</div>
-          <div class="quantity-controls">
-            <button type="button" aria-label="Diminuir quantidade" onclick="changeQuantity(${item.id},-1)">−</button>
-            <strong>${item.quantity}</strong>
-            <button type="button" aria-label="Aumentar quantidade" onclick="changeQuantity(${item.id},1)">+</button>
-          </div>
-          <button type="button" class="remove-item" onclick="removeFromCart(${item.id})">Remover</button>
-        </div>
-      </div>`).join("")}
-    </div>`;
-  }).join("");
-  total.textContent=fmtCurrency(getCartTotal());
-  const impact=document.getElementById("cartImpactBox");
-  if(impact) impact.innerHTML=impactHTML();
-}
-function impactHTML(){
-  return `<div class="impact-box" id="cartImpactBox">
-    <strong>🌱 Impacto da sua cesta</strong>
-    <div class="impact-grid">
-      <div class="impact-metric"><span>CO₂ economizado</span><strong>${getCartCarbon().toFixed(1)} kg</strong></div>
-      <div class="impact-metric"><span>Apoio à economia familiar</span><strong>${fmtCurrency(getFamilySupport())}</strong></div>
-    </div>
-    <p class="methodology">Simulação educativa: CO₂ = soma do indicador fictício de cada unidade × quantidade. O apoio familiar representa 85% do subtotal como indicador visual, não uma taxa real.</p>
-  </div>`;
-}
-
-/* Injeta o impacto no carrinho sem alterar a estrutura original */
-const originalCartItems = document.getElementById("cartItems");
-if(originalCartItems && !document.getElementById("cartImpactBox")){
-  const impact=document.createElement("div"); impact.id="cartImpactBox";
-  originalCartItems.parentNode.insertBefore(impact,originalCartItems.nextSibling);
-}
-
-/* ---------- Perfil do produtor ---------- */
-function openProducerProfile(farmer){
-  const p=producerFor(farmer);
-  const products=ALL_PRODUCTS.filter(x=>x.farmer===farmer);
-  document.getElementById("producerTitle").textContent=`👨‍🌾 ${farmer}`;
-  document.getElementById("producerProfile").innerHTML=`
-    <div class="profile-cover"></div>
-    <div class="profile-head">
-      <img class="profile-avatar" src="${p.photos[0]}" alt="Propriedade de ${farmer}">
-      <div><strong>${farmer}</strong><div style="font-size:.8rem;color:var(--color-muted-foreground);">📍 ${p.location}</div></div>
-    </div>
-    <div class="profile-badges">${p.badges.map(b=>`<span class="tag tag-certified">✓ ${b}</span>`).join("")}</div>
-    <p>${p.story}</p>
-    <p><strong>Métodos de cultivo:</strong> ${p.methods}</p>
-    <h3 style="font-family:var(--font-heading);">📷 Galeria da propriedade</h3>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;">${p.photos.map((img,i)=>`<img src="${img}" alt="Foto ${i+1} da propriedade" style="width:100%;height:100px;object-fit:cover;border-radius:.6rem;">`).join("")}</div>
-    <h3 style="font-family:var(--font-heading);">⭐ Avaliações de compradores</h3>
-    ${p.reviews.map(r=>`<div class="review-card"><strong>${r[0]} · ⭐ ${r[1]}</strong><p>${r[2]}</p></div>`).join("")}
-    <h3 style="font-family:var(--font-heading);">Produtos vinculados</h3>
-    ${products.length?products.map(x=>`<div class="order-summary-row"><span>${x.name}</span><strong>${fmtCurrency(x.price)}</strong></div>`).join(""):"<p>Nenhum produto disponível no catálogo.</p>"}
-    <p class="methodology">Localização apresentada de forma aproximada. Dados de perfil, avaliações e rastreabilidade são mocks para demonstração.</p>`;
-  openModal("producerModal");
-}
-
-/* ---------- Cesta semanal ---------- */
-const WEEKLY_BASKET_IDS=[1,2,3,7];
-function openWeeklyBasket(){
-  const items=WEEKLY_BASKET_IDS.map(id=>ALL_PRODUCTS.find(p=>p.id===id)).filter(Boolean);
-  const total=items.reduce((s,p)=>s+p.price,0), discounted=total*.92;
-  document.getElementById("basketPreview").innerHTML=items.map(p=>`<div class="order-summary-row"><span>${p.name}</span><strong>${fmtCurrency(p.price)}</strong></div>`).join("")+
-    `<hr><div class="order-summary-row"><span>Subtotal</span><strong>${fmtCurrency(total)}</strong></div><div class="order-summary-row"><span>Desconto simulado (8%)</span><strong>− ${fmtCurrency(total*.08)}</strong></div><div class="order-summary-row"><strong>Total da cesta</strong><strong>${fmtCurrency(discounted)}</strong></div>`;
-  openModal("basketModal");
-}
-function addWeeklyBasket(){
-  WEEKLY_BASKET_IDS.forEach(id=>{
-    const p=ALL_PRODUCTS.find(x=>x.id===id);
-    if(p && isAvailable(p)){
-      const existing=cart.find(x=>x.id===id);
-      if(existing) existing.quantity++;
-      else cart.push({id:p.id,name:p.name,price:p.price*.92,unit:p.unit,image:p.image,quantity:1,farmer:p.farmer,carbon:p.carbon});
-    }
-  });
-  saveCart();updateCartBadge();renderCart();closeModal("basketModal");openModal("cartModal");
-}
-
-/* ---------- Checkout ---------- */
-function populateCheckout(){
-  const dateSelect=document.getElementById("deliveryDate");
-  dateSelect.innerHTML="";
-  for(let i=1;i<=7;i++){
-    const d=new Date();d.setDate(d.getDate()+i);
-    const value=d.toISOString().slice(0,10);
-    const label=d.toLocaleDateString("pt-BR",{weekday:"short",day:"2-digit",month:"2-digit"});
-    dateSelect.innerHTML+=`<option value="${value}">${label}</option>`;
-  }
-  const pickup=document.getElementById("pickupPoint");
-  pickup.innerHTML=PICKUP_POINTS.map(x=>`<option value="${x.id}">${x.name} — ${x.city}</option>`).join("");
-}
-function updateDeliveryFields(){
-  const type=document.querySelector('input[name="deliveryType"]:checked').value;
-  document.getElementById("deliveryFields").classList.toggle("hidden",type!=="delivery");
-  document.getElementById("pickupFields").classList.toggle("hidden",type!=="pickup");
-  document.getElementById("customerAddress").required=type==="delivery";
-  document.getElementById("customerCity").required=type==="delivery";
-  document.getElementById("customerCep").required=type==="delivery";
-  document.getElementById("pickupPoint").required=type==="pickup";
-  const shipping=type==="delivery" ? 7.9 : 0;
-  document.getElementById("paymentShipping").textContent=shipping ? fmtCurrency(shipping) : "Grátis";
-  document.getElementById("paymentTotal").textContent=fmtCurrency(getCartTotal()+shipping);
-}
-function renderCheckoutProducerSummary(){
-  const groups=getProducerGroups(cart);
-  document.getElementById("checkoutProducerSummary").innerHTML=Object.entries(groups).map(([farmer,items])=>{
-    const subtotal=items.reduce((s,i)=>s+i.price*i.quantity,0);
-    return `<div class="order-summary-row"><span>${farmer}</span><strong>${fmtCurrency(subtotal)}</strong></div>`;
-  }).join("");
-}
-function goToCheckout(){
-  if(!cart.length){alert("Seu carrinho está vazio.");return;}
-  clearCheckoutError(); closeModal("cartModal");
-  document.getElementById("paymentProducts").textContent=fmtCurrency(getCartTotal());
-  populateCheckout();updateDeliveryFields();renderCheckoutProducerSummary();
-  document.getElementById("checkoutImpact").innerHTML=impactHTML().replace('id="cartImpactBox"','id="checkoutImpactInner"');
-  openModal("paymentModal");
-}
-function copyPixKey(){
-  const input=document.getElementById("pixKey");
-  navigator.clipboard?.writeText(input.value).then(()=>alert("Chave PIX fictícia copiada!")).catch(()=>{input.select();document.execCommand("copy");alert("Chave PIX fictícia copiada!");});
-}
-function updatePaymentFields(){
-  const method=document.querySelector('input[name="payment"]:checked').value;
-  document.getElementById("cardFields").classList.toggle("hidden",method!=="card");
-  document.getElementById("pixFields").classList.toggle("hidden",method!=="pix");
-}
-
-/* ---------- Autenticação local demonstrativa ---------- */
-function updateSigninButton(){
-  const user=JSON.parse(localStorage.getItem("ecoConectaUser")||"null");
-  const label=document.getElementById("signinBtnLabel");
-  label.textContent=user?.firstName ? user.firstName : "Entrar/Cadastro";
-}
-function loginLocal(e){
-  e.preventDefault();
-  const email=document.getElementById("loginEmail").value.trim().toLowerCase();
-  const password=document.getElementById("loginPassword").value;
-  const stored=JSON.parse(localStorage.getItem("ecoConectaAccount")||"null");
-  if(!stored || stored.email!==email || stored.password!==password){
-    alert("Conta não encontrada ou senha incorreta. Cadastre-se primeiro nesta demonstração.");
-    return;
-  }
-  localStorage.setItem("ecoConectaUser",JSON.stringify(stored));
-  updateSigninButton();closeModal("loginModal");alert(`Login realizado com sucesso! Bem-vindo(a), ${stored.firstName}! 🌱`);
-}
-function registerLocal(e){
-  e.preventDefault();
-  const user={
-    firstName:document.getElementById("registerFirstName").value.trim(),
-    lastName:document.getElementById("registerLastName").value.trim(),
-    birthdate:document.getElementById("registerBirthdate").value,
-    email:document.getElementById("registerEmail").value.trim().toLowerCase(),
-    password:document.getElementById("registerPassword").value
-  };
-  localStorage.setItem("ecoConectaAccount",JSON.stringify(user));
-  localStorage.setItem("ecoConectaUser",JSON.stringify(user));
-  updateSigninButton();closeModal("loginModal");e.target.reset();
-  alert(`Cadastro realizado com sucesso! Bem-vindo(a), ${user.firstName}! 🌱`);
-}
-
-/* ---------- Estado e acessibilidade ---------- */
-document.querySelectorAll('input[name="deliveryType"]').forEach(r=>r.addEventListener("change",updateDeliveryFields));
-document.querySelectorAll('input[name="payment"]').forEach(r=>r.addEventListener("change",updatePaymentFields));
-document.getElementById("paymentForm").addEventListener("submit",(e)=>{
-  e.preventDefault();clearCheckoutError();
-  if(!cart.length){showCheckoutError("Seu carrinho está vazio.");return;}
-  const type=document.querySelector('input[name="deliveryType"]:checked').value;
-  if(type==="delivery" && (!document.getElementById("customerAddress").value.trim() || !document.getElementById("customerCity").value.trim() || !document.getElementById("customerCep").value.trim())){
-    showCheckoutError("Preencha o endereço, cidade e CEP para entrega.");return;
-  }
-  if(type==="pickup" && !document.getElementById("pickupPoint").value){showCheckoutError("Selecione um ponto de retirada.");return;}
-  const method=document.querySelector('input[name="payment"]:checked').value;
-  if(method==="card"){
-    const n=document.getElementById("cardNumber").value.replace(/\D/g,"");
-    if(n.length<13){showCheckoutError("Digite um número de cartão fictício válido para a demonstração.");return;}
-  }
-  const shipping=type==="delivery"?7.9:0;
-  const order={
-    id:"EC-"+Date.now().toString().slice(-8),customer:document.getElementById("customerName").value.trim(),
-    deliveryType:type,address:type==="delivery"?document.getElementById("customerAddress").value.trim():"",
-    city:type==="delivery"?document.getElementById("customerCity").value.trim():"",
-    cep:type==="delivery"?document.getElementById("customerCep").value.trim():"",
-    pickup:type==="pickup"?PICKUP_POINTS.find(x=>x.id===document.getElementById("pickupPoint").value):null,
-    schedule:{date:document.getElementById("deliveryDate").value,time:document.getElementById("deliveryTime").value},
-    payment:method,products:[...cart],subtotal:getCartTotal(),shipping,total:getCartTotal()+shipping,
-    carbon:getCartCarbon(),familySupport:getFamilySupport(),date:new Date().toISOString()
-  };
-  localStorage.setItem("lastOrder",JSON.stringify(order));
-  document.getElementById("finalOrderSummary").innerHTML=`
-    <div><span>Pedido</span><strong>${order.id}</strong></div>
-    <div><span>Total</span><strong>${fmtCurrency(order.total)}</strong></div>
-    <div><span>Recebimento</span><strong>${type==="delivery"?"Entrega":"Retirada"}</strong></div>
-    <div><span>Agendamento</span><strong>${new Date(order.schedule.date+"T12:00:00").toLocaleDateString("pt-BR")} · ${order.schedule.time}</strong></div>
-    <div><span>CO₂ simulado</span><strong>${order.carbon.toFixed(1)} kg</strong></div>`;
-  cart=[];saveCart();updateCartBadge();renderCart();closeModal("paymentModal");openModal("successModal");
-});
-
-/* Corrige comportamento dos formulários já existentes no arquivo */
-document.getElementById("loginForm").removeEventListener("submit",()=>{});
-document.getElementById("loginForm").addEventListener("submit",loginLocal);
-document.getElementById("registerForm").addEventListener("submit",registerLocal);
-
-/* inicialização das novas camadas */
-renderSeason();
-populateCheckout();
-
 /* ================= INICIALIZAÇÃO ================= */
 
 renderSidebarCategories();
 
 render(ALL_PRODUCTS);
-renderSeason();
+renderSeasonProducts();
+loadProducers();
 
 updateCartBadge();
 
@@ -3756,7 +4415,4 @@ updateSigninButton();
 
 </body>
 </html>
-</script>
-
-</body>
-</html>
+<
