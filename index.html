@@ -44,8 +44,14 @@
   box-sizing:border-box;
 }
 
+html{
+  min-height:100%;
+  background:var(--color-primary);
+}
+
 html,body{
-  height:100%;
+  min-height:100%;
+  height:auto;
 }
 
 body{
@@ -1549,10 +1555,37 @@ main{
 }
 
 footer.site-footer{
+  width:100%;
+  margin:0 0 -1px 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.75rem;
   text-align:center;
-  padding:2rem 1rem 3rem;
-  color:var(--color-muted-foreground);
+  padding:2rem 1rem;
+  color:#fff;
+  background:var(--color-primary);
   font-size:.8125rem;
+}
+.site-footer .footer-logo{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  font-family:var(--font-heading);
+  font-size:1.25rem;
+  font-weight:700;
+}
+.site-footer .footer-logo-mark{
+  width:2.25rem;
+  height:2.25rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.site-footer .footer-copyright{
+  margin:0;
+  opacity:.85;
 }
 
 @media(max-width:639px){
@@ -1974,6 +2007,10 @@ footer.site-footer{
       <!-- ============ GRADE DE PRODUTOS ============ -->
       <div id="productGrid" class="product-grid"></div>
 
+    </div>
+
+    <div style="display:flex;justify-content:center;margin-top:1.5rem;">
+      <button class="btn-cta" id="loadMoreProductsBtn" type="button">Ver mais</button>
     </div>
 
   </section>
@@ -2511,7 +2548,15 @@ footer.site-footer{
 <!-- ================= RODAPÉ ================= -->
 
 <footer class="site-footer">
-  Code Horizon · Do Campo à Mesa
+  <div class="footer-logo">
+    <span class="footer-logo-mark">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-14 6 1-3 3-5 6-6 0 0-3 0-4 1-2 1-3 3-3 4 0 0 1-1 3-1 4 0 5 3 5 6 0 0-3-3-7-3-3 0-4 2-4 2s.5-1 2-1c4 0 6 4 6 4z"/>
+      </svg>
+    </span>
+    Code Horizon · Do Campo à Mesa
+  </div>
+  <p class="footer-copyright">© 2026 Code Horizon. Todos os direitos reservados.</p>
 </footer>
 
 <script>
@@ -3132,44 +3177,42 @@ function productCardHTML(p){
 }
 
 
+let productsVisibleCount = 6;
+let currentProducts = [];
+
 function render(products){
+  const grid = document.getElementById("productGrid");
+  const loadMoreBtn = document.getElementById("loadMoreProductsBtn");
 
-  const grid =
-    document.getElementById("productGrid");
-
-  document.getElementById(
-    "productCount"
-  ).textContent = products.length;
-
+  currentProducts = products;
+  document.getElementById("productCount").textContent = products.length;
 
   if(products.length === 0){
-
     grid.innerHTML = `
       <p class="no-results">
         Nenhum produto encontrado com esses filtros.
       </p>
     `;
-
+    loadMoreBtn.style.display = "none";
     return;
-
   }
 
-
-  grid.innerHTML =
-    products.map(productCardHTML).join("");
-
+  const visibleProducts = products.slice(0, productsVisibleCount);
+  grid.innerHTML = visibleProducts.map(productCardHTML).join("");
+  loadMoreBtn.style.display =
+    productsVisibleCount >= products.length ? "none" : "inline-flex";
 }
+
+document.getElementById("loadMoreProductsBtn").addEventListener("click", () => {
+  productsVisibleCount = Math.min(productsVisibleCount + 6, currentProducts.length);
+  render(currentProducts);
+});
 
 function renderSeasonProducts(){
   const seasonGrid = document.getElementById("seasonGrid");
+  const seasonProducts = ALL_PRODUCTS.slice(0, 4);
 
-  if (!Array.isArray(ALL_PRODUCTS) || ALL_PRODUCTS.length === 0) {
-    seasonGrid.innerHTML = '<div class="status-box empty">Ainda não há safras desta semana.</div>';
-    return;
-  }
-
-  const featured = ALL_PRODUCTS.slice(0, 4);
-  seasonGrid.innerHTML = featured.map(product => `
+  seasonGrid.innerHTML = seasonProducts.map(product => `
     <article class="season-card">
       <div class="product-media">
         <img src="${product.image}" alt="${product.name}" loading="lazy">
@@ -4018,7 +4061,6 @@ document
 /* ================= BOTÕES ADICIONAR ================= */
 
 document
-  .getElementById("productGrid")
   .addEventListener(
     "click",
     (e) => {
