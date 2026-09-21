@@ -920,6 +920,18 @@ main{ padding-top:104px; }
 
 .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:.75rem; }
 
+/* texto de status abaixo do CEP */
+.field-hint{
+  display:block;
+  min-height:1em;
+  margin-top:.35rem;
+  font-size:.75rem;
+  color:var(--color-muted-foreground);
+}
+
+.field-hint.ok{ color:var(--color-primary); }
+.field-hint.error{ color:#b94a48; }
+
 /* -------- Abas Entrar / Cadastrar (divisória do modal de login) -------- */
 
 .auth-tabs{
@@ -1644,14 +1656,35 @@ footer.site-footer{
 
       <div class="form-group">
 
-        <label>
+        <label for="customerCep">
+          CEP
+        </label>
+
+        <input
+          type="text"
+          id="customerCep"
+          placeholder="00000-000"
+          maxlength="9"
+          inputmode="numeric"
+          autocomplete="postal-code"
+          required
+        >
+
+        <small id="cepStatus" class="field-hint"></small>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="customerAddress">
           Endereço de entrega
         </label>
 
         <input
           type="text"
           id="customerAddress"
-          placeholder="Rua, número e bairro"
+          placeholder="Rua e bairro"
           required
         >
 
@@ -1662,14 +1695,14 @@ footer.site-footer{
 
         <div class="form-group">
 
-          <label>
-            Cidade
+          <label for="customerNumber">
+            Número
           </label>
 
           <input
             type="text"
-            id="customerCity"
-            placeholder="Sua cidade"
+            id="customerNumber"
+            placeholder="Ex.: 123"
             required
           >
 
@@ -1678,14 +1711,14 @@ footer.site-footer{
 
         <div class="form-group">
 
-          <label>
-            CEP
+          <label for="customerCity">
+            Cidade
           </label>
 
           <input
             type="text"
-            id="customerCep"
-            placeholder="00000-000"
+            id="customerCity"
+            placeholder="Sua cidade"
             required
           >
 
@@ -3777,6 +3810,11 @@ document
             "customerAddress"
           ).value,
 
+        number:
+          document.getElementById(
+            "customerNumber"
+          ).value,
+
         city:
           document.getElementById(
             "customerCity"
@@ -3823,6 +3861,98 @@ document
 
     }
   );
+
+
+/* =========================================================
+   CEP → ENDEREÇO E CIDADE (API pública ViaCEP)
+   Ao completar os 8 dígitos, preenche endereço e cidade.
+   Os campos continuam editáveis caso a pessoa queira ajustar.
+   ========================================================= */
+
+const cepInput     = document.getElementById("customerCep");
+const cepStatus    = document.getElementById("cepStatus");
+const addressInput = document.getElementById("customerAddress");
+const numberInput  = document.getElementById("customerNumber");
+const cityInput    = document.getElementById("customerCity");
+
+let cepRequestId = 0;   // evita que uma resposta antiga sobrescreva a mais nova
+
+
+function setCepStatus(message, type){
+
+  cepStatus.textContent = message;
+  cepStatus.className = "field-hint" + (type ? " " + type : "");
+
+}
+
+
+cepInput.addEventListener("input", () => {
+
+  // deixa só números e aplica a máscara 00000-000
+  let v = cepInput.value.replace(/\D/g, "").slice(0, 8);
+
+  if(v.length > 5){
+    v = v.slice(0, 5) + "-" + v.slice(5);
+  }
+
+  cepInput.value = v;
+
+  const digits = v.replace("-", "");
+
+  if(digits.length === 8){
+    searchCep(digits);
+  }else{
+    cepRequestId++;
+    setCepStatus("", "");
+  }
+
+});
+
+
+async function searchCep(cep){
+
+  const requestId = ++cepRequestId;
+
+  setCepStatus("Buscando endereço…", "");
+
+  try{
+
+    const res  = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const data = await res.json();
+
+    if(requestId !== cepRequestId){
+      return;
+    }
+
+    if(data.erro){
+      setCepStatus("CEP não encontrado. Confira os números.", "error");
+      return;
+    }
+
+    if(data.logradouro){
+      addressInput.value =
+        [data.logradouro, data.bairro].filter(Boolean).join(", ");
+    }
+
+    cityInput.value = `${data.localidade} - ${data.uf}`;
+
+    setCepStatus("Endereço encontrado ✓", "ok");
+
+    // o CEP não traz o número da casa, então levamos a pessoa até ele
+    numberInput.focus();
+
+  }catch(err){
+
+    if(requestId === cepRequestId){
+      setCepStatus(
+        "Não foi possível consultar o CEP agora. Preencha o endereço manualmente.",
+        "error"
+      );
+    }
+
+  }
+
+}
 
 
 /* ================= FECHAR CLICANDO FORA ================= */
