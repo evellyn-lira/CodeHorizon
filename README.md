@@ -1,4 +1,4 @@
-# Code Horizon
+#-Code Horizon-
 
 Plataforma web para conectar pequenos produtores rurais e agricultores familiares diretamente aos consumidores finais.
 
