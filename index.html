@@ -3503,46 +3503,106 @@ function getFilteredProducts(){
 
   return ALL_PRODUCTS.filter(p => {
 
+    /* ================= BUSCA ================= */
+
     if(filterState.search){
 
-  const q =
-    normalizeSearchText(
-      filterState.search
-    );
+      const q = filterState.search
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
-  const searchableText = [
+      const name = String(p.name || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
-    p.name,
-    p.farmer,
-    p.origin,
-    p.category,
-    p.description,
-    p.badge,
-    p.unit,
+      const farmer = String(p.farmer || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
-    p.organic
-      ? "organico"
-      : "",
+      const origin = String(p.origin || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
-    p.certified
-      ? "certificado"
-      : ""
+      const category = String(p.category || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
-  ]
-    .map(normalizeSearchText)
-    .join(" ");
+      const description = getProductDescription(p)
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+      const matches =
+        name.includes(q) ||
+        farmer.includes(q) ||
+        origin.includes(q) ||
+        category.includes(q) ||
+        description.includes(q);
+
+      if(!matches){
+        return false;
+      }
+
+    }
 
 
-  const matches =
-    searchableText.includes(q);
+    /* ================= CATEGORIA ================= */
+
+    if(
+      filterState.categories.size > 0 &&
+      !filterState.categories.has(p.category)
+    ){
+      return false;
+    }
 
 
-  if(!matches){
-    return false;
-  }
+    /* ================= CULTIVO ================= */
+
+    if(
+      filterState.cultivo === "organico" &&
+      !p.organic
+    ){
+      return false;
+    }
+
+    if(
+      filterState.cultivo === "convencional" &&
+      p.organic
+    ){
+      return false;
+    }
+
+
+    /* ================= CERTIFICADO ================= */
+
+    if(
+      filterState.certified &&
+      !p.certified
+    ){
+      return false;
+    }
+
+
+    /* ================= DISTÂNCIA ================= */
+
+    if(
+      filterState.distance !== "todos" &&
+      p.distance > Number(filterState.distance)
+    ){
+      return false;
+    }
+
+
+    return true;
+
+  });
 
 }
-
 /* Chama isso toda vez que um filtro muda: reaplica a busca
    e re-renderiza a grade + sincroniza a UI.
    (Ao mudar um filtro, o catálogo volta para o primeiro bloco de 6.) */
