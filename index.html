@@ -1,3 +1,19 @@
+/* ================= BANCO DE DADOS ================= */
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  const SUPABASE_URL = 'https://zdkanectpdunogcohvsw.supabase.co';
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    'sb_publishable_iRehzYsvbdffM95Na8goBg_sO2pTeNQ';
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  console.log('Supabase configurado!');
+</script>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
