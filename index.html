@@ -5089,7 +5089,6 @@ function updateSigninButton(){
 
 }
 
-
 /* -------- Formulário Entrar -------- */
 
 document
@@ -5129,14 +5128,18 @@ document
         objective: metadata.objective || "conhecer"
       };
 
-      // Salva somente os dados do perfil, nunca a senha.
-      saveCurrentUser(user);
+      // Salva o perfil sem guardar a senha.
+      localStorage.setItem(
+        "ecoConectaUser",
+        JSON.stringify(user)
+      );
 
+      updateSigninButton();
       closeModal("loginModal");
       e.target.reset();
 
       showToast(
-        "Login realizado com sucesso! 🌱",
+        "Login realizado com sucesso!",
         "success"
       );
 
@@ -5144,8 +5147,7 @@ document
       console.error("Erro no login:", error);
 
       showToast(
-        error.message ||
-          "Não foi possível entrar. Confira seu e-mail e senha.",
+        "Não foi possível entrar. Confira seu e-mail e senha.",
         "error"
       );
     }
@@ -5213,32 +5215,32 @@ document
               niche: user.niche,
               accountType: user.accountType,
               objective: user.objective
-            },
-
-            emailRedirectTo: window.location.origin
+            }
           }
         });
 
       if (error) throw error;
 
-      if (data.user && data.session) {
+      if (data.session && data.user) {
         user.id = data.user.id;
 
-        saveCurrentUser(user);
+        localStorage.setItem(
+          "ecoConectaUser",
+          JSON.stringify(user)
+        );
+
+        updateSigninButton();
         closeModal("loginModal");
 
         showToast(
-          `Cadastro realizado com sucesso! Bem-vindo(a), ${user.firstName}! 🌱`,
+          "Cadastro realizado com sucesso!",
           "success"
         );
-
       } else {
         showToast(
-          "Cadastro criado! Confira seu e-mail para confirmar a conta antes de entrar.",
+          "Conta criada! Confira seu e-mail para confirmar o cadastro antes de entrar.",
           "success"
         );
-
-        document.getElementById("tabEntrar")?.click();
       }
 
       e.target.reset();
@@ -5249,11 +5251,12 @@ document
 
       showToast(
         error.message ||
-          "Não foi possível criar a conta. Confira os dados e tente novamente.",
+          "Não foi possível criar sua conta. Tente novamente.",
         "error"
       );
     }
   });
+
 
 /* =========================================================
    PERFIL DO USUÁRIO
