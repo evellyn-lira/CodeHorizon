@@ -5094,94 +5094,166 @@ function updateSigninButton(){
 
 document
   .getElementById("loginForm")
-  .addEventListener(
-    "submit",
-    (e) => {
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      e.preventDefault();
+    const email = document
+      .getElementById("loginEmail")
+      .value.trim()
+      .toLowerCase();
 
+    const password = document
+      .getElementById("loginPassword")
+      .value;
 
-      const email =
-        document
-          .getElementById("loginEmail")
-          .value;
+    try {
+      const { data, error } =
+        await supabaseClient.auth.signInWithPassword({
+          email,
+          password
+        });
 
+      if (error) throw error;
 
-      // Se já existir um cadastro salvo com esse e-mail,
-      // usamos o nome dele; senão, guardamos só o e-mail.
-      const stored = getCurrentUser();
+      const authUser = data.user;
+      const metadata = authUser.user_metadata || {};
 
-      const user =
-        stored && stored.email === email
-          ? stored
-          : { email };
+      const user = {
+        id: authUser.id,
+        firstName: metadata.firstName || "",
+        lastName: metadata.lastName || "",
+        birthdate: metadata.birthdate || "",
+        email: authUser.email || email,
+        niche: metadata.niche || "",
+        accountType: metadata.accountType || "pessoal",
+        objective: metadata.objective || "conhecer"
+      };
 
+      // Salva somente os dados do perfil, nunca a senha.
       saveCurrentUser(user);
 
       closeModal("loginModal");
+      e.target.reset();
 
-      showToast("Login realizado com sucesso! 🌱", "success");
+      showToast(
+        "Login realizado com sucesso! 🌱",
+        "success"
+      );
 
+    } catch (error) {
+      console.error("Erro no login:", error);
+
+      showToast(
+        error.message ||
+          "Não foi possível entrar. Confira seu e-mail e senha.",
+        "error"
+      );
     }
-  );
+  });
 
 
 /* -------- Formulário Cadastrar -------- */
 
 document
   .getElementById("registerForm")
-  .addEventListener(
-    "submit",
-    (e) => {
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      e.preventDefault();
+    const accountType =
+      document.querySelector(
+        'input[name="registerAccountType"]:checked'
+      )?.value || "pessoal";
 
+    const objective =
+      document.querySelector(
+        'input[name="registerObjective"]:checked'
+      )?.value || "conhecer";
 
-      const accountType =
-        document.querySelector('input[name="registerAccountType"]:checked')?.value || "pessoal";
+    const user = {
+      firstName: document
+        .getElementById("registerFirstName")
+        .value.trim(),
 
-      const objective =
-        document.querySelector('input[name="registerObjective"]:checked')?.value || "conhecer";
+      lastName: document
+        .getElementById("registerLastName")
+        .value.trim(),
 
-      const user = {
+      birthdate: document
+        .getElementById("registerBirthdate")
+        .value,
 
-        firstName:
-          document.getElementById("registerFirstName").value.trim(),
+      email: document
+        .getElementById("registerEmail")
+        .value.trim()
+        .toLowerCase(),
 
-        lastName:
-          document.getElementById("registerLastName").value.trim(),
+      niche: document
+        .getElementById("registerNiche")
+        .value,
 
-        birthdate:
-          document.getElementById("registerBirthdate").value,
+      accountType,
+      objective
+    };
 
-        email:
-          document.getElementById("registerEmail").value,
+    const password = document
+      .getElementById("registerPassword")
+      .value;
 
-        password:
-          document.getElementById("registerPassword").value,
+    try {
+      const { data, error } =
+        await supabaseClient.auth.signUp({
+          email: user.email,
+          password,
 
-        niche:
-          document.getElementById("registerNiche").value,
+          options: {
+            data: {
+              firstName: user.firstName,
+              lastName: user.lastName,
+              birthdate: user.birthdate,
+              niche: user.niche,
+              accountType: user.accountType,
+              objective: user.objective
+            },
 
-        accountType,
-        objective
+            emailRedirectTo: window.location.origin
+          }
+        });
 
-      };
+      if (error) throw error;
 
+      if (data.user && data.session) {
+        user.id = data.user.id;
 
-      saveCurrentUser(user);
+        saveCurrentUser(user);
+        closeModal("loginModal");
 
-      closeModal("loginModal");
+        showToast(
+          `Cadastro realizado com sucesso! Bem-vindo(a), ${user.firstName}! 🌱`,
+          "success"
+        );
+
+      } else {
+        showToast(
+          "Cadastro criado! Confira seu e-mail para confirmar a conta antes de entrar.",
+          "success"
+        );
+
+        document.getElementById("tabEntrar")?.click();
+      }
 
       e.target.reset();
       goToRegisterStep(1);
 
+    } catch (error) {
+      console.error("Erro no cadastro:", error);
 
-      showToast(`Cadastro realizado com sucesso! Bem-vindo(a), ${user.firstName}! 🌱`, "success");
-
+      showToast(
+        error.message ||
+          "Não foi possível criar a conta. Confira os dados e tente novamente.",
+        "error"
+      );
     }
-  );
-
+  });
 
 /* =========================================================
    PERFIL DO USUÁRIO
