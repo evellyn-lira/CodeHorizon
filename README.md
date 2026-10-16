@@ -1,7 +1,10 @@
 
 ## CodeHorizon
 
-Plataforma web para conectar pequenos produtores rurais e agricultores familiares diretamente aos consumidores finais.
+**Conectando produtores rurais a consumidores de forma mais transparente e sustentável.**
+O CodeHorizon é uma plataforma web que busca aproximar pequenos produtores rurais e agricultores familiares dos consumidores finais. A proposta é facilitar o acesso a produtos agrícolas regionais, valorizar a produção local e incentivar práticas de consumo consciente.
+
+Por meio de uma experiência digital acessível, o projeto pretende ampliar a visibilidade dos produtores e oferecer aos consumidores mais informações sobre a origem dos alimentos.
 
 ![Logo do projeto](Fotos/Logo.jpeg) 
 ---
