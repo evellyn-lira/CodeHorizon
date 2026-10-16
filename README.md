@@ -1,163 +1,83 @@
+💻 Tecnologias Utilizadas
+Categoria	Tecnologia	Status
+Frontend	HTML5	Em desenvolvimento
+Frontend	CSS3	Em desenvolvimento
+Frontend	JavaScript	Em desenvolvimento
+Backend	A confirmar	Tecnologia não identificada nesta documentação
+Banco de dados	A confirmar	Tecnologia não identificada nesta documentação
+⚙️ Pré-requisitos
 
-## CodeHorizon
+Para visualizar e desenvolver a interface do CodeHorizon, recomenda-se:
 
-Plataforma web para conectar pequenos produtores rurais e agricultores familiares diretamente aos consumidores finais.
+Navegador atualizado, como Google Chrome ou Mozilla Firefox.
+Editor de código, como Visual Studio Code.
+Git, caso o projeto seja obtido por meio de um repositório Git.
 
-![Logo do projeto](Fotos/Logo.jpeg) 
----
+Dependências adicionais poderão ser necessárias quando o ambiente completo da aplicação estiver definido.
 
-## Identificação Acadêmica
+🚀 Instalação
+1. Obter os arquivos do projeto
 
-| Item | Descrição |
-|---|---|
-| **Instituição de Ensino** | Uniceplac |
-| **Curso** | Engenharia de Software |
-| **Disciplina** | Projeto Integrado de Certificação em Governança e Gestão de TI |
-| **Orientador** | Profº Hudson Neves |
+Se você já possui os arquivos, abra a pasta do projeto no editor de código.
 
----
+Caso o projeto esteja em um repositório Git, utilize:
 
-## Descrição
+git clone <URL_DO_REPOSITORIO>
+cd <PASTA_DO_PROJETO>
 
-O **Code Horizon** é uma plataforma web desenvolvida para aproximar pequenos produtores rurais e agricultores familiares dos consumidores finais. O sistema promove transparência, comércio justo, consumo consciente e acesso prático a alimentos frescos e orgânicos, permitindo o acompanhamento do impacto ambiental e da origem dos produtos.
 
-### Problema que o sistema resolve
+Substitua os valores entre sinais de menor e maior pelos dados reais do repositório.
 
-- Falta de transparência sobre a procedência e os métodos de cultivo dos alimentos consumidos.
-- Dificuldade de inserção e visibilidade de pequenos produtores no mercado digital.
+2. Abrir o projeto
 
-### Público-alvo
+Abra a pasta do projeto no Visual Studio Code ou em outro editor de sua preferência.
 
-| Público | Descrição |
-|---|---|
-| **Produtores** | Pequenos agricultores rurais e famílias produtoras buscando um canal direto de vendas. |
-| **Consumidores** | Pessoas em busca de alimentos frescos, orgânicos e regionais que priorizam o consumo sustentável. |
+Confira se os arquivos HTML, CSS, JavaScript e as imagens estão presentes nos caminhos utilizados pela aplicação.
 
----
+▶️ Como Executar
 
-## Objetivos
+Se o frontend utilizar apenas HTML, CSS e JavaScript, sem depender de um backend ou de recursos específicos de servidor, você poderá abrir o arquivo HTML inicial diretamente no navegador.
 
-### Objetivo Geral
+Outra opção é utilizar a extensão Live Server no Visual Studio Code:
 
-Conectar diretamente a produção agrícola familiar ao consumidor final, fortalecendo a economia local, valorizando a agricultura regional e simplificando a compra de alimentos de qualidade.
+Abra a pasta do projeto no Visual Studio Code.
+Instale a extensão Live Server, caso necessário.
+Localize o arquivo HTML inicial.
+Clique com o botão direito e selecione a opção para abrir com o Live Server.
 
----
+Importante: a execução por esse método permite visualizar a interface, mas não garante o funcionamento de autenticação, persistência de dados ou outras operações que dependam de um backend.
 
-## Funcionalidades
+📁 Estrutura do Projeto
 
-- **Catálogo de Produtos:** Listagem e busca de itens agrícolas frescos.
-- **Perfil do Produtor:** Espaço para contar a história da propriedade, localização e métodos de cultivo.
-- **Rastreabilidade e Origem:** Exibição detalhada de onde e como o alimento foi produzido.
-- **Gestão de Compras:** Carrinho, checkout simplificado e acompanhamento de pedidos.
+A estrutura completa será documentada após a conferência dos arquivos reais do repositório.
 
----
+Com base nas imagens informadas na documentação, o projeto utiliza os seguintes arquivos:
 
-![Página de login](Fotos/Home.jpeg)
-| **Página Home**
+CodeHorizon/
+├── Fotos/
+│   ├── Logo.jpeg
+│   ├── Home.jpeg
+│   ├── Login.jpeg
+│   └── Cadastro.jpeg
+└── README.md
 
----
 
-![Home do projeto](Fotos/Login.jpeg)
-| **Página de Login**
+Esta representação contém somente os arquivos identificados na documentação. Os arquivos HTML, CSS e JavaScript deverão ser acrescentados à estrutura quando seus nomes e diretórios forem confirmados.
 
----
+🏗️ Arquitetura da Solução
 
-![Página de cadastro](Fotos/Cadastro.jpeg)
-|**Página de Cadastro**
+A arquitetura da solução será documentada após a identificação das tecnologias e dos componentes efetivamente utilizados.
 
----
+A documentação deverá descrever a relação entre a interface web, o backend e o banco de dados, caso esses componentes estejam integrados à aplicação.
 
-## Tecnologias Utilizadas
+🗄️ Banco de Dados
 
-| Categoria | Tecnologias |
-|---|---|
-| **Frontend** | HTML5, CSS3, JavaScript |
-| **Backend** | A ser definido pela equipe |
-| **Banco de Dados** | A ser definido pela equipe |
-| **Frameworks e Bibliotecas** | A ser definido pela equipe |
+A tecnologia de banco de dados ainda precisa ser identificada.
 
----
+Após a confirmação, esta seção poderá incluir o modelo de dados, as entidades, os relacionamentos e a forma como a aplicação realiza a persistência das informações.
 
-## Arquitetura da Solução
+🔌 API
 
-A ser definido pela equipe.
+A documentação da API será elaborada após a identificação do backend e dos endpoints efetivamente implementados.
 
----
-
-## Modelagem do Banco de Dados
-
-A ser definido pela equipe.
-
----
-
-## Pré-requisitos
-
-A ser definido pela equipe.
-
----
-
-## Instalação
-
-A ser definido pela equipe.
-
----
-
-## Como Executar
-
-A ser definido pela equipe.
-
----
-
-## Estrutura do Projeto
-
-A ser definido pela equipe.
-
----
-
-## Exemplos de Uso
-
-A ser definido pela equipe.
-
----
-
-## API
-
-A ser definido pela equipe.
-
----
-
-A ser definido pela equipe.
-
----
-
-## Equipe do Projeto
-
-| Integrante |
-|---|
-| Evellyn Marinho |
-| Ana Luysa Paiva |
-| João Gabriel Monteiro |
-| Kaio Lucas de Lima |
-| Lucas Barreira |
-| Luigi Gomes |
-| Luis Gustavo Cardoso |
-| Samuel Cardoso |
-| João Henrique Gomes |
-
----
-
-## Status do Projeto
-
-🚧 **Em desenvolvimento.**
-
----
-
-## Melhorias Futuras
-
-A ser definido pela equipe.
-
----
-
-## Licença
-
-A ser definido pela equipe.
+Serão documentados apenas os endpoints existentes, incluindo seus métodos HTTP, parâmetros, respostas e requisitos de autenticação, quando aplicáveis.
