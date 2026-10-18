@@ -23,6 +23,8 @@
 </p>
 
 <p align="center">
+  <a href="#identificação-acadêmica">Identificação acadêmica</a> ·
+  <a href="#equipe">Equipe</a> ·
   <a href="#visão-geral">Visão geral</a> ·
   <a href="#funcionalidades">Funcionalidades</a> ·
   <a href="#capturas-de-tela">Capturas de tela</a> ·
@@ -48,8 +50,37 @@
 
 ---
 
+## Identificação acadêmica
+
+| Item | Descrição |
+|---|---|
+| **Instituição de Ensino** | Uniceplac |
+| **Curso** | Engenharia de Software |
+| **Disciplina** | Projeto Integrado de Certificação em Governança e Gestão de TI |
+| **Orientador** | Profº Hudson Neves |
+
+---
+
+## Equipe
+
+| # | Integrante |
+|:-:|---|
+| 1 | Evellyn Marinho |
+| 2 | Ana Luysa Paiva |
+| 3 | João Gabriel Monteiro |
+| 4 | Kaio Lucas de Lima |
+| 5 | Lucas Barreira |
+| 6 | Luigi Gomes |
+| 7 | Luis Gustavo Cardoso |
+| 8 | Samuel Cardoso |
+| 9 | João Henrique Gomes |
+
+---
+
 ## Sumário
 
+- [Identificação acadêmica](#identificação-acadêmica)
+- [Equipe](#equipe)
 - [Visão geral](#visão-geral)
 - [Funcionalidades](#funcionalidades)
 - [Capturas de tela](#capturas-de-tela)
@@ -59,8 +90,6 @@
 - [Estrutura do projeto](#estrutura-do-projeto)
 - [Recursos em modo demonstração](#recursos-em-modo-demonstração)
 - [Roadmap](#roadmap)
-- [Equipe](#equipe)
-- [Identificação acadêmica](#identificação-acadêmica)
 - [Licença](#licença)
 
 ---
@@ -303,39 +332,6 @@ CodeHorizon/
 - [ ] Acompanhamento real do status dos pedidos
 - [ ] Troca de senha pela autenticação do Supabase
 - [ ] Publicação do site online
-
----
-
-## Equipe
-
-<table>
-  <tr>
-    <td align="center">Evellyn Marinho</td>
-    <td align="center">Ana Luysa Paiva</td>
-    <td align="center">João Gabriel Monteiro</td>
-  </tr>
-  <tr>
-    <td align="center">Kaio Lucas de Lima</td>
-    <td align="center">Lucas Barreira</td>
-    <td align="center">Luigi Gomes</td>
-  </tr>
-  <tr>
-    <td align="center">Luis Gustavo Cardoso</td>
-    <td align="center">Samuel Cardoso</td>
-    <td align="center">João Henrique Gomes</td>
-  </tr>
-</table>
-
----
-
-## Identificação acadêmica
-
-| Item | Descrição |
-|---|---|
-| **Instituição de Ensino** | Uniceplac |
-| **Curso** | Engenharia de Software |
-| **Disciplina** | Projeto Integrado de Certificação em Governança e Gestão de TI |
-| **Orientador** | Profº Hudson Neves |
 
 ---
 
