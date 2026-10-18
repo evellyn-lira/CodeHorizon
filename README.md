@@ -1,47 +1,62 @@
+<p align="center">
+  <img src="Fotos/Logo.jpeg" alt="Logo do CodeHorizon" width="140">
+</p>
 
-## CodeHorizon
+<h1 align="center">CodeHorizon · Do Campo à Mesa</h1>
 
-**Conectando produtores rurais a consumidores de forma mais transparente e sustentável.**
+<p align="center">
+  <strong>Conectando produtores rurais a consumidores de forma mais transparente e sustentável.</strong>
+</p>
 
-  O CodeHorizon é uma plataforma web que busca aproximar pequenos produtores rurais e agricultores familiares dos consumidores finais. A proposta é facilitar o acesso a produtos agrícolas regionais, valorizar a produção local e incentivar práticas de consumo consciente.
+<p align="center">
+  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow" alt="Status: em desenvolvimento">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white" alt="Supabase">
+</p>
 
-Por meio de uma experiência digital acessível, o projeto pretende ampliar a visibilidade dos produtores e oferecer aos consumidores mais informações sobre a origem dos alimentos.
+<p align="center">
+  <img src="Fotos/Home.jpeg" alt="Página inicial do CodeHorizon" width="90%">
+</p>
 
-![Logo do projeto](Fotos/Logo.jpeg) 
 ---
 
-## Identificação Acadêmica
+## Sumário
 
-| Item | Descrição |
-|---|---|
-| **Instituição de Ensino** | Uniceplac |
-| **Curso** | Engenharia de Software |
-| **Disciplina** | Projeto Integrado de Certificação em Governança e Gestão de TI |
-| **Orientador** | Profº Hudson Neves |
+- [Visão geral](#visão-geral)
+- [Funcionalidades](#funcionalidades)
+- [Capturas de tela](#capturas-de-tela)
+- [Tecnologias](#tecnologias)
+- [Arquitetura](#arquitetura)
+- [Como executar](#como-executar)
+- [Estrutura do projeto](#estrutura-do-projeto)
+- [Recursos em modo demonstração](#recursos-em-modo-demonstração)
+- [Roadmap](#roadmap)
+- [Equipe](#equipe)
+- [Licença](#licença)
 
 ---
 
-## Descrição
+## Visão geral
 
-O **Code Horizon** é uma plataforma web desenvolvida para aproximar pequenos produtores rurais e agricultores familiares dos consumidores finais. O sistema promove transparência, comércio justo, consumo consciente e acesso prático a alimentos frescos e orgânicos, permitindo o acompanhamento do impacto ambiental e da origem dos produtos.
+O CodeHorizon é uma plataforma web que aproxima pequenos produtores rurais e agricultores familiares dos consumidores finais. Ela facilita o acesso a produtos agrícolas regionais, valoriza a produção local e incentiva o consumo consciente.
 
-### Problema que o sistema resolve
+Cada produto mostra o produtor, a região de origem, a distância até o consumidor e o CO₂ economizado, para que o cliente saiba de onde vem o que está comprando.
 
-- Falta de transparência sobre a procedência e os métodos de cultivo dos alimentos consumidos.
+### Problema
+
+- Falta de transparência sobre a procedência e os métodos de cultivo dos alimentos.
 - Dificuldade de inserção e visibilidade de pequenos produtores no mercado digital.
 
-### Público-alvo
+### Para quem é
 
 | Público | Descrição |
 |---|---|
-| **Produtores** | Pequenos agricultores rurais e famílias produtoras buscando um canal direto de vendas. |
-| **Consumidores** | Pessoas em busca de alimentos frescos, orgânicos e regionais que priorizam o consumo sustentável. |
+| **Produtores** | Pequenos agricultores e famílias produtoras que buscam um canal direto de vendas. |
+| **Consumidores** | Pessoas que procuram alimentos frescos, orgânicos e regionais e priorizam o consumo sustentável. |
 
----
-
-## Objetivos
-
-### Objetivo Geral
+### Objetivo
 
 Conectar diretamente a produção agrícola familiar ao consumidor final, fortalecendo a economia local, valorizando a agricultura regional e simplificando a compra de alimentos de qualidade.
 
@@ -49,119 +64,228 @@ Conectar diretamente a produção agrícola familiar ao consumidor final, fortal
 
 ## Funcionalidades
 
-- **Catálogo de Produtos:** Listagem e busca de itens agrícolas frescos.
-- **Perfil do Produtor:** Espaço para contar a história da propriedade, localização e métodos de cultivo.
-- **Rastreabilidade e Origem:** Exibição detalhada de onde e como o alimento foi produzido.
-- **Gestão de Compras:** Carrinho, checkout simplificado e acompanhamento de pedidos.
+### Vitrine e navegação
+
+- **Banner interativo** com 4 slides e troca automática: apresentação da plataforma, Modo Sementes, seja um produtor parceiro e assinatura semanal.
+- **Atalhos rápidos** para comprar, explorar sementes, vender e rastrear pedido.
+- **Busca** por produto, produtor, região e categoria, sem diferenciar acentos.
+
+### Catálogo de produtos
+
+- **38 produtos** em 8 categorias: Frutas, Verduras e Legumes, Sementes, Grãos e Cereais, Ovos e Laticínios, Mel e Derivados, Temperos e Ervas, Doces e Conservas.
+- **Filtros** na barra lateral e nos botões do topo: categoria, tipo de cultivo (orgânico ou convencional), somente certificados e distância (até 50, 100 ou 200 km).
+- Produtos exibidos em **blocos de 6**, com o botão "Ver mais".
+- Cada card mostra avaliação, selo de certificado, distância, CO₂ economizado, detalhes, escolha de quantidade e botão de adicionar ao carrinho.
+
+### Safras da Semana
+
+Seleção em destaque com os produtos da época, com os mesmos botões de quantidade e carrinho do catálogo.
+
+### Perfil do produtor
+
+História da família produtora, localização, selos (como Orgânico e Comércio Justo), práticas de cultivo, galeria de fotos e avaliações de compradores. Os dados vêm do arquivo `producers.json`; se ele não carregar, o site usa um perfil padrão.
+
+### Compra
+
+- **Carrinho** com alteração de quantidade e remoção de itens, salvo no navegador.
+- **Checkout** com PIX, cartão ou boleto.
+- **Busca de endereço pelo CEP**, usando a API pública ViaCEP.
+- **Confirmação do pedido** com código, itens, forma de pagamento e total.
+
+### Conta do usuário
+
+- **Cadastro em 2 etapas:** dados da conta e, depois, nicho, tipo de conta (pessoal ou empresarial) e objetivo.
+- **Login e cadastro** com Supabase Auth.
+- **Minha Conta** com as abas Informações, Senha e segurança, Conexões, Meus pedidos, Equipe e Notificações.
+
+### Suporte
+
+- **Central de Ajuda** com canais de contato e perguntas frequentes.
+- Rodapé com informações da plataforma e links para produtores.
 
 ---
 
-![Página de login](Fotos/Home.jpeg)
-| **Página Home**
+## Capturas de tela
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="Fotos/Login.jpeg" alt="Tela de login" width="100%"><br>
+      <sub>Login</sub>
+    </td>
+    <td align="center">
+      <img src="Fotos/Cadastro.jpeg" alt="Tela de cadastro" width="100%"><br>
+      <sub>Cadastro</sub>
+    </td>
+  </tr>
+</table>
+
+<!--
+Quando tirar novas capturas, salve em Fotos/ e tire as marcas de comentário desta caixa:
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="Fotos/Catalogo.jpeg" alt="Catálogo com filtros" width="100%"><br>
+      <sub>Catálogo e filtros</sub>
+    </td>
+    <td align="center">
+      <img src="Fotos/Produtor.jpeg" alt="Perfil do produtor" width="100%"><br>
+      <sub>Perfil do produtor</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="Fotos/Carrinho.jpeg" alt="Carrinho de compras" width="100%"><br>
+      <sub>Carrinho</sub>
+    </td>
+    <td align="center">
+      <img src="Fotos/Checkout.jpeg" alt="Finalização da compra" width="100%"><br>
+      <sub>Finalizar compra</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="Fotos/MinhaConta.jpeg" alt="Área Minha Conta" width="100%"><br>
+      <sub>Minha Conta</sub>
+    </td>
+    <td align="center">
+      <img src="Fotos/Mobile.jpeg" alt="Versão para celular" width="45%"><br>
+      <sub>Versão para celular</sub>
+    </td>
+  </tr>
+</table>
+
+Demonstração em GIF (salve em Fotos/demo.gif):
+
+![Demonstração do fluxo de compra](Fotos/demo.gif)
+-->
 
 ---
 
-![Home do projeto](Fotos/Login.jpeg)
-| **Página de Login**
-
----
-
-![Página de cadastro](Fotos/Cadastro.jpeg)
-|**Página de Cadastro**
-
----
-
-## Tecnologias Utilizadas
+## Tecnologias
 
 | Categoria | Tecnologias |
 |---|---|
-| **Frontend** | HTML5, CSS3, JavaScript |
-| **Backend** | A ser definido pela equipe |
-| **Banco de Dados** | A ser definido pela equipe |
-| **Frameworks e Bibliotecas** | A ser definido pela equipe |
+| **Frontend** | HTML5, CSS3 e JavaScript puro (sem frameworks) |
+| **Autenticação** | Supabase Auth (biblioteca `supabase-js`) |
+| **APIs externas** | ViaCEP, para busca de endereço pelo CEP |
+| **Armazenamento no navegador** | localStorage (carrinho, pedidos e preferências) |
+| **Dados do produtor** | Arquivo `producers.json` |
+| **Fontes** | Google Fonts (Fraunces e Outfit) |
+| **Versionamento** | Git e GitHub |
 
 ---
 
-## Arquitetura da Solução
+## Arquitetura
 
-A ser definido pela equipe.
+```mermaid
+flowchart LR
+    U[Usuário] --> F["index.html<br/>HTML + CSS + JavaScript"]
+    F --> S[("Supabase Auth<br/>login e cadastro")]
+    F --> V["API ViaCEP<br/>busca de endereço"]
+    F --> P["producers.json<br/>perfil do produtor"]
+    F --> L[("localStorage<br/>carrinho, pedidos e preferências")]
+```
 
----
-
-## Modelagem do Banco de Dados
-
-A ser definido pela equipe.
-
----
-
-## Pré-requisitos
-
-A ser definido pela equipe.
+Hoje o Supabase cuida do login e do cadastro. Produtos, pedidos e carrinho ficam no próprio site e no navegador. A próxima etapa é mover esses dados para um banco de dados.
 
 ---
 
-## Instalação
+## Como executar
 
-A ser definido pela equipe.
+### Pré-requisitos
 
----
+- Navegador atualizado
+- Conexão com a internet (Supabase, fontes, imagens e ViaCEP)
+- Editor de código, como o Visual Studio Code
+- Extensão Live Server (recomendada)
 
-## Como Executar
+### Instalação
 
-A ser definido pela equipe.
+```bash
+git clone https://github.com/USUARIO/REPOSITORIO.git
+cd REPOSITORIO
+```
 
----
+<!-- Troque USUARIO/REPOSITORIO pelo link real do repositório -->
 
-## Estrutura do Projeto
+### Execução
 
-A ser definido pela equipe.
+1. Abra a pasta do projeto no Visual Studio Code.
+2. Abra o arquivo `index.html`.
+3. Clique com o botão direito e escolha **Open with Live Server**.
+4. O site abrirá no navegador.
 
----
+> Use o Live Server porque o site carrega o `producers.json` com `fetch()`. Abrindo o HTML direto pelo explorador de arquivos, o navegador pode bloquear esse carregamento.
 
-## Exemplos de Uso
+### Configuração do Supabase
 
-A ser definido pela equipe.
-
----
-
-## API
-
-A ser definido pela equipe.
-
----
-
-A ser definido pela equipe.
-
----
-
-## Equipe do Projeto
-
-| Integrante |
-|---|
-| Evellyn Marinho |
-| Ana Luysa Paiva |
-| João Gabriel Monteiro |
-| Kaio Lucas de Lima |
-| Lucas Barreira |
-| Luigi Gomes |
-| Luis Gustavo Cardoso |
-| Samuel Cardoso |
-| João Henrique Gomes |
+No início do `index.html` ficam a URL do projeto e a chave **pública** (publishable). Use somente essa chave no frontend. Nunca coloque chaves secretas (`service_role`) no código do site.
 
 ---
 
-## Status do Projeto
+## Estrutura do projeto
 
-🚧 **Em desenvolvimento.**
+```text
+CodeHorizon/
+│
+├── Fotos/
+├── index.html
+├── style.css
+├── producers.json
+└── README.md
+```
+
+<!-- Ajuste se o projeto tiver outras pastas ou arquivos -->
 
 ---
 
-## Melhorias Futuras
+## Recursos em modo demonstração
 
-A ser definido pela equipe.
+Algumas partes ainda usam dados de exemplo e serão trocadas por integrações reais:
+
+- Pagamento por PIX, cartão e boleto: nenhum valor é cobrado.
+- Status dos pedidos: sorteado entre "Em preparo", "A caminho" e "Entregue".
+- Conexões de conta (Google, WhatsApp e Instagram) e convites de equipe.
+- Canais de contato da Central de Ajuda.
+- Estatísticas e vantagens exibidas na página inicial.
+
+---
+
+## Roadmap
+
+- [x] Página inicial com banner interativo
+- [x] Catálogo com 38 produtos, busca e filtros
+- [x] Safras da Semana
+- [x] Perfil do produtor
+- [x] Carrinho e checkout
+- [x] Busca de endereço pelo CEP
+- [x] Login e cadastro com Supabase
+- [x] Área Minha Conta
+- [ ] Banco de dados para produtos, pedidos e avaliações
+- [ ] Área para o produtor cadastrar e editar os próprios produtos
+- [ ] Pagamento real
+- [ ] Acompanhamento real do status dos pedidos
+- [ ] Troca de senha pela autenticação do Supabase
+- [ ] Publicação do site online
+
+---
+
+## Equipe
+
+- Evellyn Marinho
+- Ana Luysa Paiva
+- João Gabriel Monteiro
+- Kaio Lucas de Lima
+- Lucas Barreira
+- Luigi Gomes
+- Luis Gustavo Cardoso
+- Samuel Cardoso
+- João Henrique Gomes
 
 ---
 
 ## Licença
 
-A ser definido pela equipe.
+Todos os direitos reservados. © 2026 Equipe CodeHorizon.
