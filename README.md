@@ -109,8 +109,8 @@ Cada produto mostra o produtor, a região de origem, a distância até o consumi
 
 | Público | Descrição |
 |---|---|
-| 🌾 **Produtores** | Pequenos agricultores e famílias produtoras que buscam um canal direto de vendas. |
-| 🛒 **Consumidores** | Pessoas que procuram alimentos frescos, orgânicos e regionais e priorizam o consumo sustentável. |
+|  **Produtores** | Pequenos agricultores e famílias produtoras que buscam um canal direto de vendas. |
+|  **Consumidores** | Pessoas que procuram alimentos frescos, orgânicos e regionais e priorizam o consumo sustentável. |
 
 ### Objetivo
 
