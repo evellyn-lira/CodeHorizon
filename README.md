@@ -249,11 +249,9 @@ Hoje o Supabase cuida do login e do cadastro. Produtos, pedidos e carrinho ficam
 ### Instalação
 
 ```bash
-git clone https://github.com/USUARIO/REPOSITORIO.git
-cd REPOSITORIO
+git clone https://github.com/evellyn-lira/CodeHorizon.git
+cd CodeHorizon
 ```
-
-<!-- Troque USUARIO/REPOSITORIO pelo link real do repositório -->
 
 ### Execução
 
