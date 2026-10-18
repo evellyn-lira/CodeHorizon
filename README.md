@@ -9,6 +9,20 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow?style=for-the-badge" alt="Status: em desenvolvimento">
+  <img src="https://img.shields.io/badge/licen%C3%A7a-todos%20os%20direitos%20reservados-lightgrey?style=for-the-badge" alt="Licença: todos os direitos reservados">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase">
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub">
+</p>
+
+<p align="center">
   <a href="#visão-geral">Visão geral</a> ·
   <a href="#funcionalidades">Funcionalidades</a> ·
   <a href="#capturas-de-tela">Capturas de tela</a> ·
@@ -17,17 +31,20 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow" alt="Status: em desenvolvimento">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white" alt="Supabase">
-</p>
-
-<p align="center">
   <img src="Fotos/Home.jpeg" alt="Página inicial do CodeHorizon" width="90%"><br>
   <sub>Página inicial do CodeHorizon</sub>
 </p>
+
+<br>
+
+<table align="center">
+  <tr>
+    <td align="center" width="25%"><h3>38</h3><sub>produtos regionais</sub></td>
+    <td align="center" width="25%"><h3>8</h3><sub>categorias</sub></td>
+    <td align="center" width="25%"><h3>3</h3><sub>formas de pagamento</sub></td>
+    <td align="center" width="25%"><h3>100%</h3><sub>rastreável até o produtor</sub></td>
+  </tr>
+</table>
 
 ---
 
@@ -43,6 +60,7 @@
 - [Recursos em modo demonstração](#recursos-em-modo-demonstração)
 - [Roadmap](#roadmap)
 - [Equipe](#equipe)
+- [Identificação acadêmica](#identificação-acadêmica)
 - [Licença](#licença)
 
 ---
@@ -62,12 +80,12 @@ Cada produto mostra o produtor, a região de origem, a distância até o consumi
 
 | Público | Descrição |
 |---|---|
-| **Produtores** | Pequenos agricultores e famílias produtoras que buscam um canal direto de vendas. |
-| **Consumidores** | Pessoas que procuram alimentos frescos, orgânicos e regionais e priorizam o consumo sustentável. |
+| 🌾 **Produtores** | Pequenos agricultores e famílias produtoras que buscam um canal direto de vendas. |
+| 🛒 **Consumidores** | Pessoas que procuram alimentos frescos, orgânicos e regionais e priorizam o consumo sustentável. |
 
 ### Objetivo
 
-Conectar diretamente a produção agrícola familiar ao consumidor final, fortalecendo a economia local, valorizando a agricultura regional e simplificando a compra de alimentos de qualidade.
+> Conectar diretamente a produção agrícola familiar ao consumidor final, fortalecendo a economia local, valorizando a agricultura regional e simplificando a compra de alimentos de qualidade.
 
 ---
 
@@ -116,6 +134,34 @@ História da família produtora, localização, selos (como Orgânico e Comérci
 
 ## Capturas de tela
 
+### Compra
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="Fotos/Catalogo.jpeg" alt="Catálogo com filtros" width="100%"><br>
+      <sub><strong>Catálogo</strong> com busca e filtros</sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="Fotos/Carrinho.jpeg" alt="Carrinho de compras" width="100%"><br>
+      <sub><strong>Carrinho</strong> de compras</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="Fotos/Checkout.jpeg" alt="Finalização da compra" width="70%"><br>
+      <sub><strong>Checkout</strong> com busca de endereço pelo CEP</sub>
+    </td>
+  </tr>
+</table>
+
+### Produtor
+
+<p align="center">
+  <img src="Fotos/Perfil-do-Produtor.jpeg" alt="Perfil do produtor" width="80%"><br>
+  <sub><strong>Perfil do produtor:</strong> história da família, selos, práticas de cultivo, galeria e avaliações</sub>
+</p>
+
 ### Acesso à plataforma
 
 <table>
@@ -130,50 +176,6 @@ História da família produtora, localização, selos (como Orgânico e Comérci
     </td>
   </tr>
 </table>
-
-### Perfil do produtor
-
-<p align="center">
-  <img src="Fotos/Perfil-do-Produtor.jpeg" alt="Perfil do produtor" width="80%"><br>
-  <sub>História da família, selos, práticas de cultivo, galeria e avaliações</sub>
-</p>
-
-<!--
-Quando tirar novas capturas, salve em Fotos/ e tire as marcas de comentário desta caixa:
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="Fotos/Catalogo.jpeg" alt="Catálogo com filtros" width="100%"><br>
-      <sub>Catálogo e filtros</sub>
-    </td>
-    <td align="center">
-      <img src="Fotos/Carrinho.jpeg" alt="Carrinho de compras" width="100%"><br>
-      <sub>Carrinho</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="Fotos/Checkout.jpeg" alt="Finalização da compra" width="100%"><br>
-      <sub>Finalizar compra</sub>
-    </td>
-    <td align="center">
-      <img src="Fotos/MinhaConta.jpeg" alt="Área Minha Conta" width="100%"><br>
-      <sub>Minha Conta</sub>
-    </td>
-  </tr>
-</table>
-
-Versão para celular (salve em Fotos/Mobile.jpeg):
-
-<p align="center">
-  <img src="Fotos/Mobile.jpeg" alt="Versão para celular" width="35%">
-</p>
-
-Demonstração em GIF (salve em Fotos/demo.gif):
-
-![Demonstração do fluxo de compra](Fotos/demo.gif)
--->
 
 ---
 
@@ -231,11 +233,15 @@ cd REPOSITORIO
 3. Clique com o botão direito e escolha **Open with Live Server**.
 4. O site abrirá no navegador.
 
+> [!IMPORTANT]
 > Use o Live Server porque o site carrega o `producers.json` com `fetch()`. Abrindo o HTML direto pelo explorador de arquivos, o navegador pode bloquear esse carregamento.
 
 ### Configuração do Supabase
 
-No início do `index.html` ficam a URL do projeto e a chave **pública** (publishable). Use somente essa chave no frontend. Nunca coloque chaves secretas (`service_role`) no código do site.
+No início do `index.html` ficam a URL do projeto e a chave **pública** (publishable).
+
+> [!WARNING]
+> Use somente a chave pública no frontend. Nunca coloque chaves secretas (`service_role`) no código do site.
 
 ---
 
@@ -247,9 +253,12 @@ CodeHorizon/
 ├── Fotos/
 │   ├── Logo.jpeg
 │   ├── Home.jpeg
+│   ├── Catalogo.jpeg
+│   ├── Carrinho.jpeg
+│   ├── Checkout.jpeg
+│   ├── Perfil-do-Produtor.jpeg
 │   ├── Login.jpeg
-│   ├── Cadastro.jpeg
-│   └── Perfil-do-Produtor.jpeg
+│   └── Cadastro.jpeg
 ├── index.html
 ├── style.css
 ├── producers.json
@@ -262,7 +271,8 @@ CodeHorizon/
 
 ## Recursos em modo demonstração
 
-Algumas partes ainda usam dados de exemplo e serão trocadas por integrações reais:
+> [!NOTE]
+> Algumas partes ainda usam dados de exemplo e serão trocadas por integrações reais.
 
 - Pagamento por PIX, cartão e boleto: nenhum valor é cobrado.
 - Status dos pedidos: sorteado entre "Em preparo", "A caminho" e "Entregue".
@@ -274,6 +284,8 @@ Algumas partes ainda usam dados de exemplo e serão trocadas por integrações r
 
 ## Roadmap
 
+**Concluído**
+
 - [x] Página inicial com banner interativo
 - [x] Catálogo com 38 produtos, busca e filtros
 - [x] Safras da Semana
@@ -282,6 +294,9 @@ Algumas partes ainda usam dados de exemplo e serão trocadas por integrações r
 - [x] Busca de endereço pelo CEP
 - [x] Login e cadastro com Supabase
 - [x] Área Minha Conta
+
+**Próximos passos**
+
 - [ ] Banco de dados para produtos, pedidos e avaliações
 - [ ] Área para o produtor cadastrar e editar os próprios produtos
 - [ ] Pagamento real
@@ -293,18 +308,41 @@ Algumas partes ainda usam dados de exemplo e serão trocadas por integrações r
 
 ## Equipe
 
-- Evellyn Marinho
-- Ana Luysa Paiva
-- João Gabriel Monteiro
-- Kaio Lucas de Lima
-- Lucas Barreira
-- Luigi Gomes
-- Luis Gustavo Cardoso
-- Samuel Cardoso
-- João Henrique Gomes
+<table>
+  <tr>
+    <td align="center">Evellyn Marinho</td>
+    <td align="center">Ana Luysa Paiva</td>
+    <td align="center">João Gabriel Monteiro</td>
+  </tr>
+  <tr>
+    <td align="center">Kaio Lucas de Lima</td>
+    <td align="center">Lucas Barreira</td>
+    <td align="center">Luigi Gomes</td>
+  </tr>
+  <tr>
+    <td align="center">Luis Gustavo Cardoso</td>
+    <td align="center">Samuel Cardoso</td>
+    <td align="center">João Henrique Gomes</td>
+  </tr>
+</table>
+
+---
+
+## Identificação acadêmica
+
+| Item | Descrição |
+|---|---|
+| **Instituição de Ensino** | Uniceplac |
+| **Curso** | Engenharia de Software |
+| **Disciplina** | Projeto Integrado de Certificação em Governança e Gestão de TI |
+| **Orientador** | Profº Hudson Neves |
 
 ---
 
 ## Licença
 
 Todos os direitos reservados. © 2026 Equipe CodeHorizon.
+
+<p align="center">
+  <sub>Feito com dedicação para aproximar o campo da mesa. 🌱</sub>
+</p>
