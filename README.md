@@ -9,6 +9,14 @@
 </p>
 
 <p align="center">
+  <a href="#visão-geral">Visão geral</a> ·
+  <a href="#funcionalidades">Funcionalidades</a> ·
+  <a href="#capturas-de-tela">Capturas de tela</a> ·
+  <a href="#como-executar">Como executar</a> ·
+  <a href="#roadmap">Roadmap</a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow" alt="Status: em desenvolvimento">
   <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
@@ -17,7 +25,8 @@
 </p>
 
 <p align="center">
-  <img src="Fotos/Home.jpeg" alt="Página inicial do CodeHorizon" width="90%">
+  <img src="Fotos/Home.jpeg" alt="Página inicial do CodeHorizon" width="90%"><br>
+  <sub>Página inicial do CodeHorizon</sub>
 </p>
 
 ---
@@ -107,18 +116,27 @@ História da família produtora, localização, selos (como Orgânico e Comérci
 
 ## Capturas de tela
 
+### Acesso à plataforma
+
 <table>
   <tr>
-    <td align="center">
+    <td align="center" width="50%">
       <img src="Fotos/Login.jpeg" alt="Tela de login" width="100%"><br>
-      <sub>Login</sub>
+      <sub><strong>Login</strong> com Supabase Auth</sub>
     </td>
-    <td align="center">
+    <td align="center" width="50%">
       <img src="Fotos/Cadastro.jpeg" alt="Tela de cadastro" width="100%"><br>
-      <sub>Cadastro</sub>
+      <sub><strong>Cadastro</strong> em 2 etapas</sub>
     </td>
   </tr>
 </table>
+
+### Perfil do produtor
+
+<p align="center">
+  <img src="Fotos/Perfil-do-Produtor.jpeg" alt="Perfil do produtor" width="80%"><br>
+  <sub>História da família, selos, práticas de cultivo, galeria e avaliações</sub>
+</p>
 
 <!--
 Quando tirar novas capturas, salve em Fotos/ e tire as marcas de comentário desta caixa:
@@ -130,31 +148,27 @@ Quando tirar novas capturas, salve em Fotos/ e tire as marcas de comentário des
       <sub>Catálogo e filtros</sub>
     </td>
     <td align="center">
-      <img src="Fotos/Produtor.jpeg" alt="Perfil do produtor" width="100%"><br>
-      <sub>Perfil do produtor</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
       <img src="Fotos/Carrinho.jpeg" alt="Carrinho de compras" width="100%"><br>
       <sub>Carrinho</sub>
     </td>
+  </tr>
+  <tr>
     <td align="center">
       <img src="Fotos/Checkout.jpeg" alt="Finalização da compra" width="100%"><br>
       <sub>Finalizar compra</sub>
     </td>
-  </tr>
-  <tr>
     <td align="center">
       <img src="Fotos/MinhaConta.jpeg" alt="Área Minha Conta" width="100%"><br>
       <sub>Minha Conta</sub>
     </td>
-    <td align="center">
-      <img src="Fotos/Mobile.jpeg" alt="Versão para celular" width="45%"><br>
-      <sub>Versão para celular</sub>
-    </td>
   </tr>
 </table>
+
+Versão para celular (salve em Fotos/Mobile.jpeg):
+
+<p align="center">
+  <img src="Fotos/Mobile.jpeg" alt="Versão para celular" width="35%">
+</p>
 
 Demonstração em GIF (salve em Fotos/demo.gif):
 
@@ -231,6 +245,11 @@ No início do `index.html` ficam a URL do projeto e a chave **pública** (publis
 CodeHorizon/
 │
 ├── Fotos/
+│   ├── Logo.jpeg
+│   ├── Home.jpeg
+│   ├── Login.jpeg
+│   ├── Cadastro.jpeg
+│   └── Perfil-do-Produtor.jpeg
 ├── index.html
 ├── style.css
 ├── producers.json
