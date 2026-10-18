@@ -63,7 +63,7 @@
 
 ## Equipe
 
-| # | Integrante |
+| # | Equipe |
 |:-:|---|
 | 1 | Evellyn Marinho |
 | 2 | Ana Luysa Paiva |
