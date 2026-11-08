@@ -57,7 +57,7 @@
 | **Instituição de Ensino** | Uniceplac |
 | **Curso** | Engenharia de Software |
 | **Disciplina** | Projeto Integrado de Certificação em Governança e Gestão de TI |
-| **Orientador** | Profº Hudson Neves |
+| **Orientador** | Profº Hudson Neves Silva |
 
 ---
 
