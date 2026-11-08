@@ -68,12 +68,11 @@
 | 1 | Evellyn Marinho |
 | 2 | Ana Luysa Paiva |
 | 3 | João Gabriel Monteiro |
-| 4 | Kaio Lucas de Lima |
-| 5 | Lucas Barreira |
-| 6 | Luigi Gomes |
-| 7 | Luis Gustavo Cardoso |
-| 8 | Samuel Cardoso |
-| 9 | João Henrique Gomes |
+| 4 | Lucas Barreira |
+| 5 | Luigi Gomes |
+| 6 | Luis Gustavo Cardoso |
+| 7 | Samuel Cardoso |
+| 8 | João Henrique Gomes |
 
 ---
 
