@@ -326,7 +326,6 @@ CodeHorizon/
 - [ ] Área para o produtor cadastrar e editar os próprios produtos
 - [ ] Pagamento real
 - [ ] Acompanhamento real do status dos pedidos
-- [ ] Troca de senha pela autenticação do Supabase
 - [ ] Publicação do site online
 
 ---
