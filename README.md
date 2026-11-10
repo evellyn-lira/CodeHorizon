@@ -226,7 +226,6 @@ História da família produtora, localização, selos (como Orgânico e Comérci
 ```mermaid
 flowchart LR
     U[Usuário] --> F["index.html<br/>HTML + CSS + JavaScript"]
-    F --> S[("Supabase Auth<br/>login e cadastro")]
     F --> V["API ViaCEP<br/>busca de endereço"]
     F --> P["producers.json<br/>perfil do produtor"]
     F --> L[("localStorage<br/>carrinho, pedidos e preferências")]
