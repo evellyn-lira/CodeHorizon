@@ -231,7 +231,6 @@ flowchart LR
     F --> L[("localStorage<br/>carrinho, pedidos e preferências")]
 ```
 
-Hoje o Supabase cuida do login e do cadastro. Produtos, pedidos e carrinho ficam no próprio site e no navegador. A próxima etapa é mover esses dados para um banco de dados.
 
 ---
 
